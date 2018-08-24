@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="screens_array" >
+        <item>Login Screen</item>
+        <item>Home Screen</item>
+        <item>Home Screen 2</item>
+        <item>Credentials Screen</item>
+        <item>Auth ID Screen</item>
+        <item>Auth OTP Screen</item>
+        <item>DeviceId  Screen</item>
+        <item>TouchId Screen</item>
+
+
+    </string-array>
+</resources>

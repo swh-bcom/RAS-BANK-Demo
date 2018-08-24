@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/rootActivity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/bg_sr"
+        android:orientation="vertical"
+        android:padding="@dimen/layout_dimen_10"
+        tools:context="com.example.ras.FundTransferActivity">
+
+        <include
+            layout="@layout/app_bar_drawer"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_dimen_80" />
+
+        <TextView
+            android:id="@+id/fundTransferHeadertv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="@dimen/layout_dimen_30"
+            android:paddingTop="@dimen/layout_dimen_10"
+            android:text="@string/fund_transfer"
+            android:textAllCaps="true"
+            android:textColor="@color/white" />
+
+        <LinearLayout
+            android:id="@+id/paytoll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:weightSum="100">
+
+            <TextView
+                android:id="@+id/payTo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="40"
+                android:text="@string/pay_to"
+                android:textColor="@color/white" />
+
+            <Spinner
+                android:id="@+id/payTos"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="60"
+                android:background="@color/white"
+                android:backgroundTint="@color/lightGray"
+                android:entries="@array/pay_to_arrays"
+                android:prompt="@string/beneficiary_prompt"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/beneficiarysll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:weightSum="100">
+
+            <TextView
+                android:id="@+id/beneficiary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="40"
+                android:text="@string/beneficiary"
+                android:textColor="@color/white" />
+
+            <Spinner
+                android:id="@+id/beneficiarys"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="60"
+                android:background="@color/white"
+                android:backgroundTint="@color/lightGray"
+                android:entries="@array/beneficiary_arrays"
+                android:prompt="@string/beneficiary_prompt"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <TextView
+                android:id="@+id/transfer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="40"
+                android:text="@string/transfer_amount"
+                android:textColor="@color/white" />
+
+            <EditText
+                android:id="@+id/amountet"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="60"
+                android:ems="10"
+                android:inputType="number"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom">
+
+            <Button
+                android:id="@+id/transferBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_edges_button"
+                android:padding="@dimen/layout_dimen_10"
+                android:text="@string/transfer"
+                android:textAllCaps="true"
+                android:textColor="@color/white" />
+        </LinearLayout>
+        <!--
+
+            <Switch
+                android:id="@+id/enableAuthIdSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enable AuthId in app" />
+
+
+            <Switch
+                android:id="@+id/enableAuthOtpSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enable AuthOtp in app" />
+        -->
+
+    </LinearLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_drawer"
+        app:menu="@menu/activity_drawer_drawer" />
+
+</android.support.v4.widget.DrawerLayout>

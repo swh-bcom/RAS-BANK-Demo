@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/appView"
+        android:background="@mipmap/bg_sr">
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/app_theme"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            android:weightSum="100"
+            android:padding="@dimen/layout_dimen_15"
+            tools:context="com.example.ras.AppThemeConfigActivity">
+
+            <include
+                layout="@layout/app_bar_drawer"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/layout_dimen_60" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/layout_dimen_20"
+                android:weightSum="100">
+
+                <TextView
+                    android:id="@+id/headerTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="55"
+                    android:text="@string/change_header_color"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/headercolor"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@color/colorPrimary" />
+
+                <EditText
+                    android:id="@+id/set_header_color"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:layout_marginStart="20dp"
+                    android:text="@color/colorPrimary"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/layout_dimen_20"
+                android:weightSum="100">
+
+                <TextView
+                    android:id="@+id/headertextTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="55"
+                    android:text="@string/change_header_text_color"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/headertextcolor"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@color/white" />
+
+                <EditText
+                    android:id="@+id/set_headerText_color"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:layout_marginStart="20dp"
+                    android:text="#FFFFFF"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/layout_dimen_20"
+                android:weightSum="100">
+
+                <TextView
+                    android:id="@+id/textTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="55"
+                    android:text="@string/change_text_color"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/textColor"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@color/white" />
+
+                <EditText
+                    android:id="@+id/set_text_color"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:layout_marginStart="20dp"
+                    android:text="#FFFFFF"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/layout_dimen_20"
+                android:weightSum="100">
+
+                <TextView
+                    android:id="@+id/buttonTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="55"
+                    android:text="@string/change_button_color"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/buttonColor"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@color/sr_button" />
+
+                <EditText
+                    android:id="@+id/set_button_color"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:layout_marginStart="20dp"
+                    android:text="#03A7EA"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/layout_dimen_20"
+                android:weightSum="100">
+
+                <TextView
+                    android:id="@+id/buttonTextColorTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="55"
+                    android:text="@string/change_button_text_color"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/buttonTextColor"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@color/white" />
+
+                <EditText
+                    android:id="@+id/set_button_text_color"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:layout_marginStart="20dp"
+                    android:text="#FFFFFF"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/layout_dimen_20"
+                android:weightSum="100">
+
+                <TextView
+                    android:id="@+id/appName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="45"
+                    android:text="@string/set_app_name"
+                    android:textColor="@color/white" />
+
+                <EditText
+                    android:id="@+id/set_app_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:text="@string/app_name"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100"
+                android:paddingTop="20dp">
+
+                <TextView
+                    android:id="@+id/uploadTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="60"
+                    android:text="@string/upload_logo"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/upload_logo"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:text="@string/upload" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100"
+                android:paddingTop="20dp">
+                <TextView
+                    android:id="@+id/uploadBackgroundTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="60"
+                    android:text="@string/upload_background"
+                    android:textColor="@color/white" />
+                <Button
+                    android:id="@+id/upload_background"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:text="@string/upload"
+                    />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/reset_theme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginVertical="30dp"
+                android:clickable="true"
+                android:text="@string/reset_theme"
+                android:textColor="@color/deny_highlight" />
+
+
+        </LinearLayout>
+    </ScrollView>
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_drawer"
+        app:menu="@menu/activity_drawer_drawer" />
+
+</android.support.v4.widget.DrawerLayout>

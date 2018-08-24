@@ -1,0 +1,214 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+        <RelativeLayout
+            android:id="@+id/relativelayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/base64aidrelativelayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/layout_dimen_10">
+
+                <EditText
+                    android:id="@+id/otp_userid"
+                    android:layout_width="@dimen/layout_dimension_300"
+                    android:layout_height="@dimen/layout_dimen_50"
+                    android:layout_centerHorizontal="true"
+                    android:hint="@string/user_id" />
+
+                <EditText
+                    android:id="@+id/otp_provision_url"
+                    android:layout_width="@dimen/layout_dimension_300"
+                    android:layout_height="@dimen/layout_dimen_50"
+                    android:layout_below="@id/otp_userid"
+                    android:layout_centerHorizontal="true"
+                    android:hint="@string/pro_url" />
+
+                <EditText
+                    android:id="@+id/otp_activation_code"
+                    android:layout_width="@dimen/layout_dimension_300"
+                    android:layout_height="@dimen/layout_dimen_50"
+                    android:layout_below="@id/otp_provision_url"
+                    android:layout_centerHorizontal="true"
+                    android:hint="@string/activation_code" />
+
+                <EditText
+                    android:id="@+id/otp_pin"
+                    android:layout_width="@dimen/layout_dimension_300"
+                    android:layout_height="@dimen/layout_dimen_50"
+                    android:layout_below="@id/otp_activation_code"
+                    android:layout_centerHorizontal="true"
+                    android:hint="@string/pin" />
+
+                <EditText
+                    android:id="@+id/otp_provision_response"
+                    android:layout_width="@dimen/layout_dimension_300"
+                    android:layout_height="@dimen/layout_dimen_120"
+                    android:layout_below="@id/otp_pin"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/lightGray"
+                    android:hint="@string/activation_code" />
+
+                <Button
+                    android:id="@+id/otp_provision_button"
+                    android:layout_width="@dimen/layout_dimension_200"
+                    android:layout_height="@dimen/layout_dimen_60"
+                    android:layout_below="@id/otp_provision_response"
+                    android:text="@string/provision_account" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/loginWithSmSession"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/base64aidrelativelayout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/layout_dimen_10">
+
+                <EditText
+                    android:id="@+id/smsession_userid"
+                    android:layout_width="@dimen/layout_dimension_300"
+                    android:layout_height="@dimen/layout_dimen_50"
+                    android:layout_centerHorizontal="true"
+                    android:hint="@string/user_id" />
+
+                <EditText
+                    android:id="@+id/smsession_password"
+                    android:layout_width="@dimen/layout_dimension_300"
+                    android:layout_height="@dimen/layout_dimen_50"
+                    android:layout_below="@id/smsession_userid"
+                    android:layout_centerHorizontal="true"
+                    android:hint="@string/pin" />
+
+                <EditText
+                    android:id="@+id/smsession_response"
+                    android:layout_width="@dimen/layout_dimension_300"
+                    android:layout_height="@dimen/layout_dimen_120"
+                    android:layout_below="@id/smsession_password"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/lightGray"
+                    android:hint="@string/response_string" />
+
+                <Button
+                    android:id="@+id/smsession_button"
+                    android:layout_width="@dimen/layout_dimension_200"
+                    android:layout_height="@dimen/layout_dimen_60"
+                    android:layout_below="@id/smsession_response"
+                    android:layout_marginEnd="@dimen/layout_dimen_10"
+                    android:text="@string/smsession_button" />
+
+                <Button
+                    android:id="@+id/verify_smsession_button"
+                    android:layout_width="@dimen/layout_dimension_200"
+                    android:layout_height="@dimen/layout_dimen_60"
+                    android:layout_below="@id/smsession_response"
+                    android:layout_toEndOf="@id/smsession_button"
+                    android:text="@string/access_button"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/getAccountLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/loginWithSmSession"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/layout_dimen_10">
+
+                <EditText
+                    android:id="@+id/getAccount_userID"
+                    android:layout_width="@dimen/layout_dimension_300"
+                    android:layout_height="@dimen/layout_dimen_50"
+                    android:hint="@string/user_id" />
+
+                <EditText
+                    android:id="@+id/getaccount_response"
+                    android:layout_width="@dimen/layout_dimension_300"
+                    android:layout_height="@dimen/layout_dimen_120"
+                    android:layout_below="@id/getAccount_userID"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/lightGray"
+                    android:hint="@string/response_string" />
+
+                <Button
+                    android:id="@+id/getAccount_button"
+                    android:layout_width="@dimen/layout_dimension_200"
+                    android:layout_height="@dimen/layout_dimen_60"
+                    android:layout_below="@id/getaccount_response"
+                    android:text="@string/get_account" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/getAllOTPAccountsLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/getAccountLayout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/layout_dimen_10">
+
+                <EditText
+                    android:id="@+id/getAllOTPAccounts_response"
+                    android:layout_width="@dimen/layout_dimension_300"
+                    android:layout_height="@dimen/layout_dimen_120"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/lightGray"
+                    android:hint="@string/response_string" />
+
+                <Button
+                    android:id="@+id/getAllOTPAccounts_button"
+                    android:layout_width="@dimen/layout_dimension_200"
+                    android:layout_height="@dimen/layout_dimen_60"
+                    android:layout_below="@id/getAllOTPAccounts_response"
+                    android:text="@string/get_all_accounts" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/removeAccountLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/getAllOTPAccountsLayout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/layout_dimen_10">
+
+                <EditText
+                    android:id="@+id/removeAccount_userID"
+                    android:layout_width="@dimen/layout_dimension_300"
+                    android:layout_height="@dimen/layout_dimen_50"
+                    android:layout_centerHorizontal="true"
+                    android:hint="@string/user_id" />
+
+                <EditText
+                    android:id="@+id/removeAccount_response"
+                    android:layout_width="@dimen/layout_dimension_300"
+                    android:layout_height="@dimen/layout_dimen_120"
+                    android:layout_below="@id/removeAccount_userID"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/lightGray"
+                    android:hint="@string/response_string" />
+
+                <Button
+                    android:id="@+id/removeAccount_button"
+                    android:layout_width="@dimen/layout_dimension_200"
+                    android:layout_height="@dimen/layout_dimen_60"
+                    android:layout_below="@id/removeAccount_response"
+                    android:text="@string/remove_account" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>

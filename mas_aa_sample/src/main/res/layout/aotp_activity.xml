@@ -1,0 +1,1408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/layout_dimen_10">
+
+                <RelativeLayout
+                    android:id="@+id/base64aidrelativelayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="@dimen/layout_dimen_5"
+                    android:visibility="visible">
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/provisioning_enable_Tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:checked="false"
+                        android:text="@string/provision" />
+
+                    <RelativeLayout
+                        android:id="@+id/provision"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/provisioning_enable_Tv"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/layout_dimen_50"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/otp_xml_data"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_50"
+                            android:layout_centerHorizontal="true"
+                            android:hint="@string/data" />
+
+                        <EditText
+                            android:id="@+id/otp_namespace"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_50"
+                            android:layout_below="@id/otp_xml_data"
+                            android:layout_centerHorizontal="true"
+                            android:hint="@string/namespace" />
+
+                        <EditText
+                            android:id="@+id/otp_activation_code"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_50"
+                            android:layout_below="@id/otp_namespace"
+                            android:layout_centerHorizontal="true"
+                            android:hint="@string/activation_code" />
+
+                        <EditText
+                            android:id="@+id/otp_pin"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_50"
+                            android:layout_below="@id/otp_activation_code"
+                            android:layout_centerHorizontal="true"
+                            android:hint="@string/pin" />
+
+                        <EditText
+                            android:id="@+id/device_id_aotp_et"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_50"
+                            android:layout_below="@id/otp_pin"
+                            android:layout_centerHorizontal="true"
+                            android:hint="@string/device_id" />
+
+                        <EditText
+                            android:id="@+id/otp_provision_response"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_120"
+                            android:layout_below="@id/device_id_aotp_et"
+                            android:layout_centerHorizontal="true"
+                            android:background="@color/lightGray"
+                            android:hint="@string/response_string" />
+
+                        <Button
+                            android:id="@+id/otp_provision_button"
+                            android:layout_width="@dimen/layout_dimension_200"
+                            android:layout_height="@dimen/layout_dimen_60"
+                            android:layout_below="@id/otp_provision_response"
+                            android:layout_centerHorizontal="true"
+                            android:text="@string/provision_account" />
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/loginWithAOTPLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/base64aidrelativelayout"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="@dimen/layout_dimen_5">
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/login_aotp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="@string/login_with_aotp" />
+
+                    <RelativeLayout
+                        android:id="@+id/aotp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/layout_dimen_50"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/loginWithAOTP_userID"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_50"
+                            android:layout_centerHorizontal="true"
+                            android:hint="@string/user_id" />
+
+                        <EditText
+                            android:id="@+id/loginWithAOTP_pin"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_50"
+                            android:layout_below="@id/loginWithAOTP_userID"
+                            android:layout_centerHorizontal="true"
+                            android:hint="@string/pin"
+                            android:inputType="textPassword" />
+                        <EditText
+                            android:id="@+id/loginWithAOTP_orgname"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_50"
+                            android:layout_below="@id/loginWithAOTP_pin"
+                            android:layout_centerHorizontal="true"
+                            android:hint="@string/str_org_name"/>
+                        <EditText
+                            android:id="@+id/loginWithAOTP_namespace"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_50"
+                            android:layout_below="@id/loginWithAOTP_orgname"
+                            android:layout_centerHorizontal="true"
+                            android:hint="@string/namespace"/>
+
+                        <EditText
+                            android:id="@+id/loginWithAOTP_response"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_120"
+                            android:layout_below="@id/loginWithAOTP_namespace"
+                            android:layout_centerHorizontal="true"
+                            android:background="@color/lightGray"
+                            android:hint="@string/response_string" />
+
+                        <Button
+                            android:id="@+id/loginWithAOTP_button"
+                            android:layout_width="@dimen/layout_dimension_200"
+                            android:layout_height="@dimen/layout_dimen_60"
+                            android:layout_below="@id/loginWithAOTP_response"
+                            android:layout_centerHorizontal="true"
+                            android:text="@string/login_with_aotp" />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/generate_otp_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/loginWithAOTPLayout"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="@dimen/layout_dimen_5"
+                    android:visibility="visible">
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/otp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="@string/generate_otp" />
+
+                    <RelativeLayout
+                        android:id="@+id/genOTP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/layout_dimen_50"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/generate_otp_userid"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_50"
+                            android:layout_centerHorizontal="true"
+                            android:hint="@string/user_id" />
+
+                        <EditText
+                            android:id="@+id/generate_otp_pin"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_50"
+                            android:layout_below="@id/generate_otp_userid"
+                            android:layout_centerHorizontal="true"
+                            android:hint="@string/pin" />
+
+                        <Spinner
+                            android:id="@+id/otp_type_spinner"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_50"
+                            android:layout_below="@id/generate_otp_pin"
+                            android:layout_centerHorizontal="true" />
+
+                        <EditText
+                            android:id="@+id/challenge_edit_text"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_50"
+                            android:layout_below="@id/otp_type_spinner"
+                            android:layout_centerHorizontal="true"
+                            android:hint="@string/challenge"
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/generate_otp_orgname"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_50"
+                            android:layout_below="@id/challenge_edit_text"
+                            android:layout_centerHorizontal="true"
+                            android:hint="@string/str_org_name"/>
+                        <EditText
+                            android:id="@+id/generate_otp_namespace"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_50"
+                            android:layout_below="@id/generate_otp_orgname"
+                            android:layout_centerHorizontal="true"
+                            android:hint="@string/namespace"/>
+
+                        <EditText
+                            android:id="@+id/generate_otp_response"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_120"
+                            android:layout_below="@id/generate_otp_namespace"
+                            android:layout_centerHorizontal="true"
+                            android:background="@color/lightGray"
+                            android:hint="@string/response_string" />
+
+                        <Button
+                            android:id="@+id/generate_otp_button"
+                            android:layout_width="@dimen/layout_dimension_200"
+                            android:layout_height="@dimen/layout_dimen_60"
+                            android:layout_below="@id/generate_otp_response"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginEnd="@dimen/layout_dimen_10"
+                            android:text="@string/generate_otp" />
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/AOTP_protectedAPI_Layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/generate_otp_layout"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="@dimen/layout_dimen_5">
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/access_api"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="@string/access_protected_api" />
+
+                    <RelativeLayout
+                        android:id="@+id/accessAPI"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/layout_dimen_50"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/protectedAPI_AOTP_response"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_120"
+                            android:layout_centerHorizontal="true"
+                            android:background="@color/lightGray"
+                            android:hint="@string/response_string" />
+
+                        <Button
+                            android:id="@+id/protectedAPI_AOTP_button"
+                            android:layout_width="@dimen/layout_dimension_200"
+                            android:layout_height="@dimen/layout_dimen_60"
+                            android:layout_below="@id/protectedAPI_AOTP_response"
+                            android:layout_centerHorizontal="true"
+                            android:text="@string/producted_api_call" />
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/getAccountLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/AOTP_protectedAPI_Layout"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="@dimen/layout_dimen_5">
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/get_account"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="@string/get_account" />
+
+                    <RelativeLayout
+                        android:id="@+id/getAccount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/layout_dimen_50"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/get_otp_account_userID"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_50"
+                            android:layout_centerHorizontal="true"
+                            android:hint="@string/user_id" />
+
+                        <EditText
+                            android:id="@+id/get_otp_orgname"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_50"
+                            android:layout_below="@id/get_otp_account_userID"
+                            android:layout_centerHorizontal="true"
+                            android:hint="@string/str_org_name"/>
+                        <EditText
+                            android:id="@+id/get_otp_namespace"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_50"
+                            android:layout_below="@id/get_otp_orgname"
+                            android:layout_centerHorizontal="true"
+                            android:hint="@string/namespace"/>
+
+
+
+                        <EditText
+                            android:id="@+id/get_otp_account_response"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_120"
+                            android:layout_below="@id/get_otp_namespace"
+                            android:layout_centerHorizontal="true"
+                            android:background="@color/lightGray"
+                            android:hint="@string/response_string" />
+
+                        <Button
+                            android:id="@+id/get_otp_account_button"
+                            android:layout_width="@dimen/layout_dimension_200"
+                            android:layout_height="@dimen/layout_dimen_60"
+                            android:layout_below="@id/get_otp_account_response"
+                            android:layout_centerHorizontal="true"
+                            android:text="@string/get_account" />
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/getAllOTPAccountsLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/getAccountLayout"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="@dimen/layout_dimen_5">
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/get_all_account"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="@string/get_all_accounts" />
+
+                    <RelativeLayout
+                        android:id="@+id/getAllAccount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/layout_dimen_50"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/getAllOTPAccounts_response"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_120"
+                            android:layout_centerHorizontal="true"
+                            android:background="@color/lightGray"
+                            android:hint="@string/response_string" />
+
+                        <Button
+                            android:id="@+id/getAllOTPAccounts_button"
+                            android:layout_width="@dimen/layout_dimension_200"
+                            android:layout_height="@dimen/layout_dimen_60"
+                            android:layout_below="@id/getAllOTPAccounts_response"
+                            android:layout_centerHorizontal="true"
+                            android:text="@string/get_all_accounts" />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/get_roamingkeys_Layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/getAllOTPAccountsLayout"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="@dimen/layout_dimen_5">
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/get_roaming_keys"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="@string/get_roaming_keys" />
+
+                    <RelativeLayout
+                        android:id="@+id/roamingKeys"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/layout_dimen_50"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/get_roamingkeys_userID"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_50"
+                            android:layout_centerHorizontal="true"
+                            android:hint="@string/user_id" />
+
+                        <EditText
+                            android:id="@+id/get_roamingkeys_orgname"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_50"
+                            android:layout_below="@id/get_roamingkeys_userID"
+                            android:layout_centerHorizontal="true"
+                            android:hint="@string/str_org_name"/>
+                        <EditText
+                            android:id="@+id/get_roamingkeys_namespace"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_50"
+                            android:layout_below="@id/get_roamingkeys_orgname"
+                            android:layout_centerHorizontal="true"
+                            android:hint="@string/namespace"/>
+
+
+                        <EditText
+                            android:id="@+id/get_roamingkeys_response"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_120"
+                            android:layout_below="@id/get_roamingkeys_namespace"
+                            android:layout_centerHorizontal="true"
+                            android:background="@color/lightGray"
+                            android:hint="@string/response_string" />
+
+                        <Button
+                            android:id="@+id/get_roamingkeys__button"
+                            android:layout_width="@dimen/layout_dimension_200"
+                            android:layout_height="@dimen/layout_dimen_60"
+                            android:layout_below="@id/get_roamingkeys_response"
+                            android:layout_centerHorizontal="true"
+                            android:text="@string/get_roaming_keys" />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/removeAccountLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/get_roamingkeys_Layout"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="@dimen/layout_dimen_5">
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/remove_account"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="@string/remove_account" />
+
+                    <RelativeLayout
+                        android:id="@+id/removeAccount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/layout_dimen_50"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/remove_otp_account_userID"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_50"
+                            android:layout_centerHorizontal="true"
+                            android:hint="@string/user_id" />
+
+                        <EditText
+                            android:id="@+id/remove_otp_orgname"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_50"
+                            android:layout_below="@id/remove_otp_account_userID"
+                            android:layout_centerHorizontal="true"
+                            android:hint="@string/str_org_name"/>
+                        <EditText
+                            android:id="@+id/remove_otp_namespace"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_50"
+                            android:layout_below="@id/remove_otp_orgname"
+                            android:layout_centerHorizontal="true"
+                            android:hint="@string/namespace"/>
+
+
+                        <EditText
+                            android:id="@+id/remove_otp_account_response"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_120"
+                            android:layout_below="@id/remove_otp_namespace"
+                            android:layout_centerHorizontal="true"
+                            android:background="@color/lightGray"
+                            android:hint="@string/response_string" />
+
+                        <Button
+                            android:id="@+id/remove_otp_account_button"
+                            android:layout_width="@dimen/layout_dimension_200"
+                            android:layout_height="@dimen/layout_dimen_60"
+                            android:layout_below="@id/remove_otp_account_response"
+                            android:layout_centerHorizontal="true"
+                            android:text="@string/remove_account" />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/resyncAccountLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/removeAccountLayout"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="@dimen/layout_dimen_5">
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/resync"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="@string/resync_credentials" />
+
+                    <RelativeLayout
+                        android:id="@+id/reSYNC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/layout_dimen_50"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/resync_userID"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_50"
+                            android:layout_centerHorizontal="true"
+                            android:hint="@string/user_id" />
+
+                        <EditText
+                            android:id="@+id/resync_time"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_50"
+                            android:layout_below="@id/resync_userID"
+                            android:layout_centerHorizontal="true"
+                            android:hint="@string/resync_time" />
+
+                        <EditText
+                            android:id="@+id/resync_orgname"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_50"
+                            android:layout_below="@id/resync_time"
+                            android:layout_centerHorizontal="true"
+                            android:hint="@string/str_org_name"/>
+                        <EditText
+                            android:id="@+id/resync_namespace"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_50"
+                            android:layout_below="@id/resync_orgname"
+                            android:layout_centerHorizontal="true"
+                            android:hint="@string/namespace"/>
+
+
+                        <EditText
+                            android:id="@+id/resync_response"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_120"
+                            android:layout_below="@id/resync_namespace"
+                            android:layout_centerHorizontal="true"
+                            android:background="@color/lightGray"
+                            android:hint="@string/response_string" />
+
+                        <Button
+                            android:id="@+id/resync_button"
+                            android:layout_width="@dimen/layout_dimension_200"
+                            android:layout_height="@dimen/layout_dimen_60"
+                            android:layout_below="@id/resync_response"
+                            android:layout_centerHorizontal="true"
+                            android:text="@string/resync" />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/logoutLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/resyncAccountLayout"
+                    android:layout_centerHorizontal="true">
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/logout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="@string/logout" />
+
+                    <RelativeLayout
+                        android:id="@+id/logOut"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/layout_dimen_50"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/logout_response"
+                            android:layout_width="@dimen/layout_dimension_300"
+                            android:layout_height="@dimen/layout_dimen_120"
+                            android:layout_centerHorizontal="true"
+                            android:background="@color/lightGray"
+                            android:hint="@string/response_string" />
+
+                        <Button
+                            android:id="@+id/logout_button"
+                            android:layout_width="@dimen/layout_dimension_200"
+                            android:layout_height="@dimen/layout_dimen_60"
+                            android:layout_below="@id/logout_response"
+                            android:layout_centerHorizontal="true"
+                            android:text="@string/logout" />
+
+                        <Button
+                            android:id="@+id/aid_unregister_device_button"
+                            android:layout_width="@dimen/layout_dimension_200"
+                            android:layout_height="@dimen/layout_dimen_60"
+                            android:layout_below="@id/logout_button"
+                            android:layout_centerHorizontal="true"
+                            android:text="@string/unregister_device" />
+
+                        <Button
+                            android:id="@+id/aid_delete_token_store_btn"
+                            android:layout_width="@dimen/layout_dimension_200"
+                            android:layout_height="@dimen/layout_dimen_60"
+                            android:layout_below="@id/aid_unregister_device_button"
+                            android:text="@string/delete_token_store" />
+
+                    </RelativeLayout>
+                </RelativeLayout>
+
+
+
+                <LinearLayout
+                    android:id="@+id/issuance_apis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/logoutLayout"
+                    android:orientation="vertical">
+
+
+                    <View
+                        android:id="@+id/divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_dimen_1"
+                        android:layout_marginTop="@dimen/layout_dimen_10"
+                        android:background="@color/black" />
+
+                    <TextView
+                        android:id="@+id/issuance_api_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:text="@string/str_issuance_api"
+                        android:layout_marginTop="@dimen/layout_dimen_10"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:textStyle="bold"/>
+
+
+                    <!-- create AOTP-->
+                    <LinearLayout
+                        android:id="@+id/parentCreateAOTPLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <android.support.v7.widget.SwitchCompat
+                            android:id="@+id/createAOTPSwitch"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/layout_dimen_10"
+                            android:checked="false"
+                            android:text="@string/create_aotp" />
+                        <LinearLayout
+                            android:id="@+id/createAOTPLayout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <EditText
+                                android:id="@+id/aotp_username"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_50"
+                                android:hint="@string/user_id" />
+
+                            <EditText
+                                android:id="@+id/aotp_org_name"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_50"
+                                android:hint="@string/str_org_name" />
+
+                            <EditText
+                                android:id="@+id/aotp_pass_word"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_50"
+                                android:hint="@string/str_aotp_profile_name" />
+
+                            <EditText
+                                android:id="@+id/aotp_client_txn_id"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_50"
+                                android:hint="@string/str_client_tnx_id" />
+                            <EditText
+                                android:id="@+id/aotp_additional_header"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_120"
+                                android:hint="@string/str_additional_headers" />
+                            <EditText
+                                android:id="@+id/aotp_additional_param"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_120"
+                                android:hint="@string/str_additional_parameters" />
+                            <CheckBox
+                                android:id="@+id/aotp_checkbox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text= "@string/str_make_public"
+                                android:layout_marginLeft="@dimen/layout_dimen_30"
+                                android:layout_marginTop="@dimen/layout_dimen_10"
+                                android:layout_marginBottom="@dimen/layout_dimen_10" />
+
+                            <EditText
+                                android:id="@+id/aotp_response"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_120"
+                                android:layout_marginBottom="@dimen/layout_dimen_10"
+                                android:background="@color/lightGray"
+                                android:hint="@string/response_string" />
+
+                            <Button
+                                android:id="@+id/aotp_create_id"
+                                android:layout_width="@dimen/layout_dimension_200"
+                                android:layout_height="@dimen/layout_dimen_60"
+                                android:layout_marginBottom="@dimen/layout_dimen_10"
+                                android:text="@string/str_create_aotp_title" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+<!--Delete AOTP-->
+
+                    <LinearLayout
+                        android:id="@+id/parentDeleteAOTPLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <android.support.v7.widget.SwitchCompat
+                            android:id="@+id/deleteAOTPSwitch"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/layout_dimen_10"
+                            android:checked="false"
+                            android:text="@string/str_aotp_delete" />
+
+                        <LinearLayout
+                            android:id="@+id/deleteAOTPLayout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <EditText
+                                android:id="@+id/delete_aotp_username"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_50"
+                                android:hint="@string/user_id" />
+
+                            <EditText
+                                android:id="@+id/delete_aotp_org_name"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_50"
+                                android:hint="@string/str_org_name" />
+
+                            <EditText
+                                android:id="@+id/delete_aotp_pass_word"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_50"
+                                android:hint="@string/str_aotp_profile_name" />
+
+                            <EditText
+                                android:id="@+id/delete_aotp_client_txn_id"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_50"
+                                android:hint="@string/str_client_tnx_id" />
+                            <EditText
+                                android:id="@+id/delete_aotp_additional_header"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_120"
+                                android:hint="@string/str_additional_headers" />
+
+                            <EditText
+                                android:id="@+id/delete_aotp_additional_param"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_120"
+                                android:hint="@string/str_additional_parameters" />
+
+                            <CheckBox
+                                android:id="@+id/delete_aotp_checkbox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text= "@string/str_make_public"
+                                android:layout_marginLeft="@dimen/layout_dimen_30"
+                                android:layout_marginTop="@dimen/layout_dimen_10"
+                                android:layout_marginBottom="@dimen/layout_dimen_10" />
+
+                            <EditText
+                                android:id="@+id/delete_aotp_response"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_120"
+                                android:layout_marginBottom="@dimen/layout_dimen_10"
+                                android:background="@color/lightGray"
+                                android:hint="@string/response_string" />
+
+                            <Button
+                                android:id="@+id/aotp_delete"
+                                android:layout_width="@dimen/layout_dimension_200"
+                                android:layout_height="@dimen/layout_dimen_60"
+                                android:layout_marginBottom="@dimen/layout_dimen_10"
+                                android:text="@string/str_delete_aotp_title" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!--Disable AOTP-->
+
+                    <LinearLayout
+                        android:id="@+id/parentDisableAOTPLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <android.support.v7.widget.SwitchCompat
+                            android:id="@+id/disableAOTPSwitch"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/layout_dimen_10"
+                            android:checked="false"
+                            android:text="@string/str_aotp_disable" />
+
+                        <LinearLayout
+                            android:id="@+id/disableAOTPLayout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <EditText
+                                android:id="@+id/disable_aotp_username"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_50"
+                                android:hint="@string/user_id" />
+
+                            <EditText
+                                android:id="@+id/disable_aotp_org_name"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_50"
+                                android:hint="@string/str_org_name" />
+
+                            <EditText
+                                android:id="@+id/disable_aotp_pass_word"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_50"
+                                android:hint="@string/str_aotp_profile_name" />
+
+                            <EditText
+                                android:id="@+id/disable_aotp_client_txn_id"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_50"
+                                android:hint="@string/str_client_tnx_id" />
+                            <EditText
+                                android:id="@+id/disable_aotp_additional_header"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_120"
+                                android:hint="@string/str_additional_headers" />
+
+                            <EditText
+                                android:id="@+id/disable_aotp_additional_param"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_120"
+                                android:hint="@string/str_additional_parameters" />
+                            <CheckBox
+                                android:id="@+id/disable_aotp_checkbox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text= "@string/str_make_public"
+                                android:layout_marginLeft="@dimen/layout_dimen_30"
+                                android:layout_marginTop="@dimen/layout_dimen_10"
+                                android:layout_marginBottom="@dimen/layout_dimen_10" />
+
+                            <EditText
+                                android:id="@+id/disable_aotp_response"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_120"
+                                android:layout_marginBottom="@dimen/layout_dimen_10"
+                                android:background="@color/lightGray"
+                                android:hint="@string/response_string" />
+
+                            <Button
+                                android:id="@+id/aotp_disable"
+                                android:layout_width="@dimen/layout_dimension_200"
+                                android:layout_height="@dimen/layout_dimen_60"
+                                android:layout_marginBottom="@dimen/layout_dimen_10"
+                                android:text="@string/str_disable_aotp_title" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <!--Download AOTP-->
+
+                    <LinearLayout
+                        android:id="@+id/parentDownloadAOTPLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <android.support.v7.widget.SwitchCompat
+                            android:id="@+id/downloadAOTPSwitch"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/layout_dimen_10"
+                            android:checked="false"
+                            android:text="@string/str_aotp_download" />
+
+                        <LinearLayout
+                            android:id="@+id/downloadAOTPLayout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <EditText
+                                android:id="@+id/download_aotp_username"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_50"
+                                android:hint="@string/user_id" />
+
+                            <EditText
+                                android:id="@+id/download_aotp_org_name"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_50"
+                                android:hint="@string/str_org_name" />
+
+                            <EditText
+                                android:id="@+id/download_aotp_pass_word"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_50"
+                                android:hint="@string/str_aotp_profile_name" />
+
+                            <EditText
+                                android:id="@+id/download_aotp_client_txn_id"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_50"
+                                android:hint="@string/str_client_tnx_id" />
+                            <EditText
+                                android:id="@+id/download_aotp_additional_header"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_120"
+                                android:hint="@string/str_additional_headers" />
+
+                            <EditText
+                                android:id="@+id/download_aotp_additional_param"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_120"
+                                android:hint="@string/str_additional_parameters" />
+                            <CheckBox
+                                android:id="@+id/download_aotp_checkbox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text= "@string/str_make_public"
+                                android:layout_marginLeft="@dimen/layout_dimen_30"
+                                android:layout_marginTop="@dimen/layout_dimen_10"
+                                android:layout_marginBottom="@dimen/layout_dimen_10" />
+
+                            <EditText
+                                android:id="@+id/download_aotp_response"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_120"
+                                android:layout_marginBottom="@dimen/layout_dimen_10"
+                                android:background="@color/lightGray"
+                                android:hint="@string/response_string" />
+
+                            <Button
+                                android:id="@+id/aotp_download"
+                                android:layout_width="@dimen/layout_dimension_200"
+                                android:layout_height="@dimen/layout_dimen_60"
+                                android:layout_marginBottom="@dimen/layout_dimen_10"
+                                android:text="@string/str_download_aotp_title" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <!--Enable AOTP-->
+
+                    <LinearLayout
+                        android:id="@+id/parentEnableAOTPLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <android.support.v7.widget.SwitchCompat
+                            android:id="@+id/enableAOTPSwitch"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/layout_dimen_10"
+                            android:checked="false"
+                            android:text="@string/str_aotp_enable" />
+
+                        <LinearLayout
+                            android:id="@+id/enableAOTPLayout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <EditText
+                                android:id="@+id/enable_aotp_username"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_50"
+                                android:hint="@string/user_id" />
+
+                            <EditText
+                                android:id="@+id/enable_aotp_org_name"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_50"
+                                android:hint="@string/str_org_name" />
+
+                            <EditText
+                                android:id="@+id/enable_aotp_pass_word"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_50"
+                                android:hint="@string/str_aotp_profile_name" />
+
+                            <EditText
+                                android:id="@+id/enable_aotp_client_txn_id"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_50"
+                                android:hint="@string/str_client_tnx_id" />
+
+                            <EditText
+                                android:id="@+id/enable_aotp_additional_header"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_120"
+                                android:hint="@string/str_additional_headers" />
+
+                            <EditText
+                                android:id="@+id/enable_aotp_additional_param"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_120"
+                                android:hint="@string/str_additional_parameters" />
+                            <CheckBox
+                                android:id="@+id/enable_aotp_checkbox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text= "@string/str_make_public"
+                                android:layout_marginLeft="@dimen/layout_dimen_30"
+                                android:layout_marginTop="@dimen/layout_dimen_10"
+                                android:layout_marginBottom="@dimen/layout_dimen_10" />
+
+                            <EditText
+                                android:id="@+id/enable_aotp_response"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_120"
+                                android:layout_marginBottom="@dimen/layout_dimen_10"
+                                android:background="@color/lightGray"
+                                android:hint="@string/response_string" />
+
+                            <Button
+                                android:id="@+id/aotp_enable"
+                                android:layout_width="@dimen/layout_dimension_200"
+                                android:layout_height="@dimen/layout_dimen_60"
+                                android:layout_marginBottom="@dimen/layout_dimen_10"
+                                android:text="@string/str_enable_aotp_title" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!--Fetch AOTP-->
+                    <LinearLayout
+                        android:id="@+id/parentFetchAOTPLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <android.support.v7.widget.SwitchCompat
+                            android:id="@+id/fetchAOTPSwitch"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/layout_dimen_10"
+                            android:checked="false"
+                            android:text="@string/str_aotp_fetch" />
+
+                        <LinearLayout
+                            android:id="@+id/fetchAOTPLayout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <EditText
+                                android:id="@+id/fetch_aotp_username"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_50"
+                                android:hint="@string/user_id" />
+
+                            <EditText
+                                android:id="@+id/fetch_aotp_org_name"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_50"
+                                android:hint="@string/str_org_name" />
+
+                            <EditText
+                                android:id="@+id/fetch_aotp_pass_word"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_50"
+                                android:hint="@string/password" />
+
+                            <EditText
+                                android:id="@+id/fetch_aotp_client_txn_id"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_50"
+                                android:hint="@string/str_client_tnx_id" />
+                            <EditText
+                                android:id="@+id/fetch_aotp_additional_header"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_120"
+                                android:hint="@string/str_additional_headers" />
+
+                            <EditText
+                                android:id="@+id/fetch_aotp_additional_param"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_120"
+                                android:hint="@string/str_additional_parameters" />
+                            <CheckBox
+                                android:id="@+id/fetch_aotp_checkbox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text= "@string/str_make_public"
+                                android:layout_marginLeft="@dimen/layout_dimen_30"
+                                android:layout_marginTop="@dimen/layout_dimen_10"
+                                android:layout_marginBottom="@dimen/layout_dimen_10" />
+
+                            <EditText
+                                android:id="@+id/fetch_aotp_response"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_120"
+                                android:layout_marginBottom="@dimen/layout_dimen_10"
+                                android:background="@color/lightGray"
+                                android:hint="@string/response_string" />
+
+                            <Button
+                                android:id="@+id/aotp_fetch"
+                                android:layout_width="@dimen/layout_dimension_200"
+                                android:layout_height="@dimen/layout_dimen_60"
+                                android:layout_marginBottom="@dimen/layout_dimen_10"
+                                android:text="@string/str_fetch_aotp_title" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+
+                   <!-- Re Issue -->
+
+                    <LinearLayout
+                        android:id="@+id/parentReIssueAOTPLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <android.support.v7.widget.SwitchCompat
+                            android:id="@+id/reIssueAOTPSwitch"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/layout_dimen_10"
+                            android:checked="false"
+                            android:text="@string/str_aotp_re_issue" />
+
+                        <LinearLayout
+                            android:id="@+id/reIssueAOTPLayout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <EditText
+                                android:id="@+id/reIssue_aotp_username"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_50"
+                                android:hint="@string/user_id" />
+
+                            <EditText
+                                android:id="@+id/reIssue_aotp_org_name"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_50"
+                                android:hint="@string/str_org_name" />
+
+                            <EditText
+                                android:id="@+id/reIssue_aotp_pass_word"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_50"
+                                android:hint="@string/str_aotp_profile_name" />
+
+                            <EditText
+                                android:id="@+id/reIssue_aotp_client_txn_id"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_50"
+                                android:hint="@string/str_client_tnx_id" />
+                            <EditText
+                                android:id="@+id/reIssue_aotp_additional_header"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_120"
+                                android:hint="@string/str_additional_headers" />
+
+                            <EditText
+                                android:id="@+id/reIssue_aotp_additional_param"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_120"
+                                android:hint="@string/str_additional_parameters" />
+
+                            <CheckBox
+                                android:id="@+id/reIssue_aotp_checkbox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text= "@string/str_make_public"
+                                android:layout_marginLeft="@dimen/layout_dimen_30"
+                                android:layout_marginTop="@dimen/layout_dimen_10"
+                                android:layout_marginBottom="@dimen/layout_dimen_10" />
+
+                            <EditText
+                                android:id="@+id/reIssue_aotp_response"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_120"
+                                android:layout_marginBottom="@dimen/layout_dimen_10"
+                                android:background="@color/lightGray"
+                                android:hint="@string/response_string" />
+
+                            <Button
+                                android:id="@+id/aotp_reIssue"
+                                android:layout_width="@dimen/layout_dimension_200"
+                                android:layout_height="@dimen/layout_dimen_60"
+                                android:layout_marginBottom="@dimen/layout_dimen_10"
+                                android:text="@string/str_re_issue_aotp_title" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+
+                    <!-- Reset-->
+
+                    <LinearLayout
+                        android:id="@+id/parentResetAOTPLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <android.support.v7.widget.SwitchCompat
+                            android:id="@+id/resetAOTPSwitch"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/layout_dimen_10"
+                            android:checked="false"
+                            android:text="@string/str_aotp_reset" />
+
+                        <LinearLayout
+                            android:id="@+id/resetAOTPLayout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <EditText
+                                android:id="@+id/reset_aotp_username"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_50"
+                                android:hint="@string/user_id" />
+
+                            <EditText
+                                android:id="@+id/reset_aotp_org_name"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_50"
+                                android:hint="@string/str_org_name" />
+
+                            <EditText
+                                android:id="@+id/reset_aotp_pass_word"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_50"
+                                android:hint="@string/str_aotp_profile_name" />
+
+                            <EditText
+                                android:id="@+id/reset_aotp_client_txn_id"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_50"
+                                android:hint="@string/str_client_tnx_id" />
+
+                            <EditText
+                                android:id="@+id/reset_aotp_additional_header"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_120"
+                                android:hint="@string/str_additional_headers" />
+
+                            <EditText
+                                android:id="@+id/reset_aotp_additional_param"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_120"
+                                android:hint="@string/str_additional_parameters" />
+
+                            <CheckBox
+                                android:id="@+id/reset_aotp_checkbox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text= "@string/str_make_public"
+                                android:layout_marginStart="@dimen/layout_dimen_30"
+                                android:layout_marginTop="@dimen/layout_dimen_10"
+                                android:layout_marginBottom="@dimen/layout_dimen_10" />
+
+                            <EditText
+                                android:id="@+id/reset_aotp_response"
+                                android:layout_width="@dimen/layout_dimension_300"
+                                android:layout_height="@dimen/layout_dimen_120"
+                                android:layout_marginBottom="@dimen/layout_dimen_10"
+                                android:background="@color/lightGray"
+                                android:hint="@string/response_string" />
+
+                            <Button
+                                android:id="@+id/aotp_reset"
+                                android:layout_width="@dimen/layout_dimension_200"
+                                android:layout_height="@dimen/layout_dimen_60"
+                                android:layout_marginBottom="@dimen/layout_dimen_10"
+                                android:text="@string/str_reset_aotp_title" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Closed-->
+                </LinearLayout>
+
+            </RelativeLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_drawer"
+        app:menu="@menu/activity_drawer_drawer" />
+
+</android.support.v4.widget.DrawerLayout>
+

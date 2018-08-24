@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/lockSessionBtn"
+            android:layout_width="@dimen/layout_dimension_200"
+            android:layout_height="wrap_content"
+            android:text="@string/lock_session" />
+
+        <Button
+            android:id="@+id/unlockSessionBtn"
+            android:layout_width="@dimen/layout_dimension_200"
+            android:layout_height="wrap_content"
+            android:text="@string/unlock_session" />
+
+        <Button
+            android:id="@+id/islockedBtn"
+            android:layout_width="@dimen/layout_dimension_200"
+            android:layout_height="wrap_content"
+            android:text="@string/is_locked" />
+
+        <Button
+            android:id="@+id/accessProtectedAPIBtn"
+            android:layout_width="@dimen/layout_dimension_200"
+            android:layout_height="wrap_content"
+            android:text="@string/access_protected_api" />
+
+        <TextView
+            android:id="@+id/msgTv"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/layout_dimen_150" />
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/lockOnPauseSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/lock_session_onpause" />
+
+    </LinearLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_drawer"
+        app:menu="@menu/activity_drawer_drawer" />
+
+</android.support.v4.widget.DrawerLayout>
+

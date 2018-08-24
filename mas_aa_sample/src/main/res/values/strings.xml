@@ -1,0 +1,389 @@
+<resources>
+    <!--<string name="app_name">7-eleven</string>-->
+    <!--
+    <string name="app_name">Rapid App Security</string>
+-->
+    <string name="app_name">CA Bank</string>
+    <string name="sharedUserLabel">Example Org</string>
+
+    <!--AuthID PKI-->
+    <string name="provision_account">Provision Account</string>
+    <string name="namespace">Namespace</string>
+    <string name="provision_url">Namespace</string>
+    <string name="base64aid">Base64 AID</string>
+    <string name="response_string">Response</string>
+    <string name="resync_time">Resync time</string>
+    <string name="epoch_time">EPOCH Time</string>
+    <string name="smsession_button">Get SMSession</string>
+    <string name="login_with_aid_button">Login With AID</string>
+    <string name="login_with_fingerprint_button">Login With Fingerprint</string>
+    <string name="producted_api_call">Access Protected API</string>
+    <string name="access_button">Access</string>
+    <string name="user_id">User ID</string>
+    <string name="org_name">Organization Name</string>
+    <string name="data">Data</string>
+    <string name="pin">PIN</string>
+    <string name="challenge">Challenge</string>
+    <string name="login_with_aotp">Login With AOTP</string>
+    <string name="get_all_accounts">Get All Accounts</string>
+    <string name="remove_account">Remove Account</string>
+    <string name="get_roaming_keys">Get Roaming Keys</string>
+    <string name="logout">Logout</string>
+    <string name="resync">Resync</string>
+    <string name="success">Success</string>
+    <string name="failed">Failed</string>
+    <string name="no_accounts">No Accounts Found</string>
+    <string name="invalid_user_id">Invalid UserID</string>
+
+    <string name="DEMO_ACCOUNT_DEFAULT_NAME">Demo Account</string>
+    <string name="ACCOUNT_PROVISION_ERROR">Account Provision Error</string>
+    <string name="MSG_SYNC_SUCCESS">Account is reset successfully</string>
+    <string name="ERR_NETWORK">Unexpected network error</string>
+    <string name="ERR_NETWORK_TIMEOUT">Connection timed out.</string>
+    <string name="ERROR">Error</string>
+    <string name="ACTIVATIONCODE">Activation Code</string>
+    <string name="WAIT_MSG_DEFAULT">Please Wait</string>
+    <string name="ERROR_PROVISIONING">An error occurred while provisioning your account</string>
+
+    <string name="authid_pki_button">Auth ID</string>
+    <string name="device_id">Device ID</string>
+
+    <string name="get_dna_details">GET DNA details</string>
+    <string name="dna_data">DNA details</string>
+    <string name="touch_id">Touch ID</string>
+    <!-- otp strings -->
+    <string name="mobile_otp">Auth OTP</string>
+    <string name="pro_url">Provision URL</string>
+    <string name="activation_code">Activation code</string>
+    <string name="generate_otp">Generate OTP</string>
+
+
+    <!-- Mobile Authentication strings -->
+    <string name="mobile_authentication">Mobile Authentication</string>
+    <string name="title_activity_authenticator">AuthenticatorActivity</string>
+    <string name="register_device">Register Device</string>
+    <string name="unregister_device">Unregister Device</string>
+    <string name="register">Register</string>
+    <string name="approve">APPROVE</string>
+    <string name="deny">DENY</string>
+    <string name="AUTHENTICATION_REQUEST_INFO">For Security reasons, we need to confirm your identity.</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="pin_password">PIN / Password</string>
+    <string name="goto_mainscreen">Goto Main Screen</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="login_with_MAS">Login With MAS</string>
+    <string name="login_with_ca_authid">Login With CA Auth ID</string>
+    <string name="login_with_ca_mobile_otp">Login With CA Mobile OTP</string>
+    <string name="enter_ca_authid_password">Enter CA Auth ID Password</string>
+    <string name="enter_ca_otp_password">Enter CA Mobile OTP Password</string>
+    <string name="unlock_with_fingerprint">Unlock With FingerPrint</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="branches_nearby"></string>
+    <string name="atms_nearby"></string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+    <!-- Strings related to cookies -->
+    <string name="with_cookie">WithCookie</string>
+    <string name="with_out_cookie">With out Cookie</string>
+
+    <!-- Strings related to fund transfer -->
+    <string name="fund_transfer">Fund Transfer</string>
+    <string name="pay_to">Pay to \u0020</string>
+    <string name="beneficiary">Beneficiary</string>
+    <string name="transfer_amount">Transfer Amount</string>
+    <string name="transfer">Transfer</string>
+
+    <!-- strings related to home screen -->
+    <string name="account_name">Hello,</string>
+    <string name="account_no">Account No.</string>
+    <string name="branch">Branch</string>
+    <string name="available_balance">Available Balance.</string>
+
+    <!-- strings related to registration -->
+    <string name="registration_for_strong_auth">REGISTRATION FOR STRONG AUTH</string>
+    <string name="register_for_ca_authID">Register CA Auth ID</string>
+    <string name="register_for_ca_otp">Register Auth OTP</string>
+    <string name="register_for_biometrics">Register FIDO Biometrics</string>
+    <string name="deregister_for_biometrics">Deregister FIDO Biometrics</string>
+
+    <!-- Unlock login -->
+    <string name="fingerprint_signin">User Fingerprint Sign-In</string>
+
+    <!-- AID -->
+    <string name="access_protected_api">Access Protected API</string>
+    <string name="login_with_aithid">Login with Auth ID</string>
+    <string name="get_smsessoin">Get SM Session</string>
+    <string name="do_mag_login">Do MAG Login</string>
+    <string name="get_account">Get Account</string>
+    <string name="delete_token_store">Delete Token Store</string>
+
+    <!-- AOTP -->
+    <string name="provision">Provision</string>
+    <string name="resync_credentials">Resync Credentials</string>
+
+    <!-- Dashboard -->
+    <string name="advanced_authentication_credentials">Advanced Authentication Credentials</string>
+    <string name="mag_credentials">MAG credentials</string>
+
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="title_activity_drawer">DrawerActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!-- Strings related to Settings -->
+    <string name="settings">Settings</string>
+    <string name="strongauth_orgname">StrongAuth Org Name</string>
+    <string name="defaultorg">apiinc</string>
+    <string name="crenetial_ns">Credential Namespace</string>
+    <string name="fido_login">FIDO Login</string>
+    <string name="enable_lsd">Browser Based Login</string>
+    <string name="enable_fido">Enable FIDO</string>
+    <string name="custom_msso_config">Customize configuration</string>
+    <string name="ca">ca</string>
+    <string name="update">SAVE SETTINGS</string>
+    <string name="transaction_history">TRANSACTION HISTORY</string>
+
+
+    <!-- userdl verification -->
+    <string name="user_verification">USER VERIFICATION</string>
+    <string name="driver_verification_no">Driver License No</string>
+    <string name="driver_verification_default_no">4817502</string>
+    <string name="verify">VERIFY</string>
+
+    <!-- webview -->
+    <string name="list_items_str">List Items to Begin</string>
+    <string name="get_products">Get Products</string>
+    <string name="credential_details">Credential Details</string>
+
+    <string name="scan_qrcode">Scan QRCode</string>
+    <string name="test">test</string>
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <!-- provision -->
+    <string name="provision_auth_id">Provision Auth ID</string>
+
+    <!-- NAV Header -->
+    <string name="rapid_app_security">Rapid App Security</string>
+    <string name="seamless_strong_authentication">Seamless Strong Authentication</string>
+
+    <!-- Touch ID -->
+    <string name="lock_session">Lock Session</string>
+    <string name="unlock_session">Unlock Session</string>
+    <string name="is_locked">is Locked</string>
+    <string name="lock_session_onpause">Lock Session On Pause</string>
+
+    <!-- Strings related to navigation drawer -->
+    <string name="lock_app">Lock App</string>
+    <string name="bill_payment">Mortgage Info</string>
+    <string name="home_screen">Home Screen</string>
+    <string name="login_screen">Login Screen</string>
+    <string name="credential_list_screen">Credential List Screen</string>
+    <string name="pushnotification">Push Notification</string>
+    <string name="detail_options">Detail Options</string>
+    <string name="atm_nearby"></string>
+    <string name="cards"></string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string-array name="list_preference_entries">
+        <item>Entry 1</item>
+        <item>Entry 2</item>
+        <item>Entry 3</item>
+    </string-array>
+
+    <string-array name="list_preference_entry_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="multi_select_list_preference_default_value" />
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+
+
+    <string name="beneficiary_prompt">Choose a Beneficiary</string>
+
+    <string-array name="beneficiary_arrays">
+        <item>--Choose--</item>
+        <item>Eleanor Jennings</item>
+        <item>Jessica Holt</item>
+        <item>Claude Delgado</item>
+        <item>Adrian Hoffman</item>
+        <item>Alex Meyer</item>
+        <item>Rosemarie	Torres</item>
+        <item>Lester Barton</item>
+        <item>Andre	Stanley</item>
+        <item>Bradford Johnson</item>
+        <item>Darin	Newton</item>
+        <item>Winifred Dennis</item>
+    </string-array>
+    <string-array name="pay_to_arrays">
+        <item>--Choose--</item>
+        <item>TV Cable bill</item>
+        <item>Mobile bill</item>
+        <item>Electricity bill</item>
+        <item>Water Bill</item>
+        <item>Property Tax</item>
+
+    </string-array>
+
+    <string-array name="transaction_history_array">
+        <item>TRANSACTION HISTORY</item>
+        <item> </item>
+        <item>Islandia ATM : \t\t\t$100</item>
+        <item>Cafe Coffee Day : \t\t\t$5</item>
+        <item>Hyatt Hotels : \t\t\t$635</item>
+        <item>Nike Store : \t\t\t$160</item>
+        <item>Shopper Stop : \t\t\t$90</item>
+    </string-array>
+
+    <!-- Adavanced Auth configuration -->
+    <string name="aa_orgname">apiinc</string>
+    <string name="aa_namespace">ca</string>
+    <!-- Demo configuration -->
+    <string name="contactus_url">https://www.chase.com/digital/resources/customer-service</string>
+    <string name="branches_url">https://locator.chase.com/</string>
+    <string name="atm_url">https://locator.chase.com/</string>
+    <string name="login_with_authid">Login With Auth ID</string>
+    <string name="auth_id">AUTH ID</string>
+    <string name="aotp">AOTP</string>
+    <string name="forwardInc">CA Bank</string>
+    <string name="authid_registration">AUTH ID REGISTRATION</string>
+    <string name="invalid_details">Enter valid details</string>
+    <string name="fidologindisabled">Fido login disabled</string>
+    <string name="smsession_protected_API">Access SMSession Protected API</string>
+    <string name="smsession_protected_API_WebView">Access SMSession API via WebView</string>
+
+    <!-- New Apis strings -->
+    <string name="create_auth_id">Create AuthID</string>
+    <string name="str_create_auth_id_title">CREATE AUTHID</string>
+    <string name="str_client_tnx_id">Client Tnx ID</string>
+    <string name="str_org_name">Org Name</string>
+    <string name="str_issuance_api">Issuance API</string>
+
+    <string name="str_auth_id_delete">Delete AuthID</string>
+    <string name="str_auth_id_disable">Disable AuthID</string>
+    <string name="str_auth_id_download">Download AuthID</string>
+    <string name="str_auth_id_enable">Enable AuthID</string>
+    <string name="str_auth_id_fetch">Fetch AuthID</string>
+    <string name="str_auth_id_re_issue">Reissue AuthID</string>
+    <string name="str_auth_id_reset">Reset AuthID</string>
+
+    <string name="str_delete_auth_id_title">DELETE AUTHID</string>
+    <string name="str_disable_auth_id_title">DISABLE AUTHID</string>
+    <string name="str_download_auth_id_title">DOWNLOAD AUTHID</string>
+    <string name="str_enable_auth_id_title">ENABLE AUTHID</string>
+    <string name="str_fetch_auth_id_title">FETCH AUTHID</string>
+    <string name="str_re_issue_auth_id_title">RE-ISSUE AUTHID</string>
+    <string name="str_reset_auth_id_title">RESET AUTHID</string>
+
+
+    <string name="create_aotp">Create AOTP</string>
+    <string name="str_aotp_delete">Delete AOTP</string>
+    <string name="str_aotp_disable">Disable AOTP</string>
+    <string name="str_aotp_download">Download AOTP</string>
+    <string name="str_aotp_enable">Enable AOTP</string>
+    <string name="str_aotp_fetch">Fetch AOTP</string>
+    <string name="str_aotp_re_issue">Reissue AOTP</string>
+    <string name="str_aotp_reset">Reset AOTP</string>
+
+    <string name="str_create_aotp_title">CREATE AOTP</string>
+    <string name="str_delete_aotp_title">DELETE AOTP</string>
+    <string name="str_disable_aotp_title">DISABLE AOTP</string>
+    <string name="str_download_aotp_title">DOWNLOAD AOTP</string>
+    <string name="str_enable_aotp_title">ENABLE AOTP</string>
+    <string name="str_fetch_aotp_title">FETCH AOTP</string>
+    <string name="str_re_issue_aotp_title">RE-ISSUE AOTP</string>
+    <string name="str_reset_aotp_title">RESET AOTP</string>
+
+    <string name="str_aotp_profile_name">Profile </string>
+
+    <string name="enable_touchid_login">Enable Biometric Login</string>
+    <string name="cancelFingerPrintLogin">CANCEL</string>
+
+    <string name="str_additional_parameters">List Of Parameters</string>
+    <string name="str_additional_headers">List Of Headers</string>
+    <string name="str_make_public">Make Public</string>
+    <string name="step_up_mechanism">Step-Up mechanism</string>
+    <string name="app_theme">Themes</string>
+    <string name="change_background_color">Change Background Color</string>
+    <string name="change_header_color">Header color</string>
+    <string name="change_header_text_color">Title color</string>
+    <string name="reset_theme">Reset Theme</string>
+    <string name="upload_logo">Logo</string>
+    <string name="upload">Upload</string>
+    <string name="pick_color">Pick Color</string>
+    <string name="change_text_color">Text Color</string>
+    <string name="change_button_color">Button Color</string>
+    <string name="change_button_text_color">Button Text Color</string>
+    <string name="set_app_name">App Title</string>
+    <string name="upload_background">Background Image</string>
+
+</resources>

@@ -1,0 +1,127 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+
+android {
+//    compileSdkVersion 26
+  //  buildToolsVersion "25.0.2"
+    compileSdkVersion 27
+    buildToolsVersion "26.0.2"
+
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    lintOptions {
+        abortOnError true
+        disable 'InvalidPackage'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.ca:mas:1.6.10'
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    //compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:appcompat-v7:27.1.1'
+    //compile 'com.android.support:appcompat-v7:25.3.1'
+    testCompile 'junit:junit:4.12'
+    //compile files('src/main/libs/CARiskMinder.jar')
+    compile files('src/main/libs/ArcotID-PKI-LIB-Android-2.2.1.jar')
+    //compile files('src/main/libs/CA Mobile-OTP-LIB-Android-2.2.3.jar')
+    //compile files('src/main/libs/CAMobileAuthenticatorSDK.jar')
+    //compile files('src/main/libs/ArcotBase-Java.jar')
+}
+
+//jcenter integration
+group 'com.ca'
+
+project.version = mas_version
+bintray {
+    user = bintray_user
+    key = bintray_api_key
+
+    configurations = ['archives'] //When uploading configuration files
+    pkg {
+        repo = 'maven'
+        name = 'mas-authid'
+        userOrg = 'caapim'
+
+        desc = 'CA Auth ID is a secure software credential that provides two-factor authentication. CA Auth ID can be used for strong authentication to various clients such as Web or Virtual Private Networks (VPNs)'
+        websiteUrl = siteUrl
+        issueTrackerUrl = issueUrl
+        vcsUrl = gitUrl
+        licenses = ['MIT']
+        labels = ['aar', 'android', 'oauth', 'security']
+        publicDownloadNumbers = true
+
+        version {
+            name = project.version
+            desc = 'CA Mobile App Services'
+        }
+    }
+}
+
+install {
+    repositories.mavenInstaller {
+        pom {
+            project {
+                packaging 'aar'
+                name 'CA Mobile App Services'
+                url siteUrl
+                licenses {
+                    license {
+                        name 'MIT'
+                        url 'https://github.com/CAAPIM/Xamarin-MAS-AuthID/blob/master/LICENSE'
+                    }
+                }
+                scm {
+                    connection gitUrl
+                    developerConnection gitUrl
+                    url siteUrl
+
+                }
+            }
+        }
+    }
+}
+
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    println "Source: $source"
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    println "Classpath: $source"
+    options.memberLevel = org.gradle.external.javadoc.JavadocMemberLevel.PROTECTED
+    destinationDir = file("../docs/ras_authid_javadoc/")
+    failOnError false
+}
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}

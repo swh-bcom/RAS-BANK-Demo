@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "942400767816",
+    "firebase_url": "https://rapida-9b475.firebaseio.com",
+    "project_id": "rapida-9b475",
+    "storage_bucket": "rapida-9b475.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:942400767816:android:645eadb6bacc8824",
+        "android_client_info": {
+          "package_name": "com.example.ras"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "942400767816-rpblh6d3dnrq653ifct76o3glg731udh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvRk-cXAshTF1F7UEF2beTbVPt1cm7nJQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,38 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg_sr">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/fullscreen_content"
+        android:layout_width="@dimen/layout_dimension_200"
+        android:layout_height="@dimen/layout_dimension_200"
+        android:layout_centerInParent="true"
+        android:src="@mipmap/logo"
+        android:gravity="center" />
+
+    <!--<Button
+        android:id="@+id/withCookieBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/layout_dimen_9"
+        android:text="@string/with_cookie" />
+
+    <Button
+        android:id="@+id/withoutCookiebtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/withCookieBtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/layout_dimen_62"
+        android:text="@string/with_out_cookie" />
+-->
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+</RelativeLayout>

@@ -1,0 +1,50 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    <dimen name="textview_medium">18sp</dimen>
+    <dimen name="imageview_size">40dp</dimen>
+    <dimen name="app_bar_drawer_height">60dp</dimen>
+    <dimen name="layout_height_20">20dp</dimen>
+    <dimen name="layout_height_40">40dp</dimen>
+    <dimen name="layout_dimen_60">60dp</dimen>
+    <dimen name="layout_dimen_80">80dp</dimen>
+    <dimen name="layout_padding_20">20dp</dimen>
+    <dimen name="layout_dimen_1">1dp</dimen>
+    <dimen name="layout_dimen_3">3dp</dimen>
+    <dimen name="layout_dimen_4">4dp</dimen>
+    <dimen name="layout_dimen_5">5dp</dimen>
+    <dimen name="layout_dimen_8">8dp</dimen>
+    <dimen name="layout_dimen_9">9dp</dimen>
+    <dimen name="layout_dimen_16">16dp</dimen>
+    <dimen name="layout_dimen_10">10dp</dimen>
+    <dimen name="layout_dimen_12">12dp</dimen>
+    <dimen name="layout_dimen_15">15dp</dimen>
+    <dimen name="layout_dimen_20">20dp</dimen>
+    <dimen name="layout_dimen_24">24dp</dimen>
+    <dimen name="layout_dimen_25">25dp</dimen>
+    <dimen name="layout_dimen_29">29dp</dimen>
+    <dimen name="layout_dimen_30">30dp</dimen>
+    <dimen name="layout_dimen_35">35dp</dimen>
+    <dimen name="layout_dimen_40">40dp</dimen>
+    <dimen name="layout_dimen_42">42dp</dimen>
+    <dimen name="layout_dimen_50">50dp</dimen>
+    <dimen name="layout_dimen_62">62dp</dimen>
+    <dimen name="layout_dimen_100">100dp</dimen>
+    <dimen name="layout_dimen_120">120dp</dimen>
+    <dimen name="layout_dimen_150">150dp</dimen>
+    <dimen name="layout_dimen_170">170dp</dimen>
+    <dimen name="layout_dimension_200">200dp</dimen>
+    <dimen name="layout_dimension_250">250dp</dimen>
+    <dimen name="layout_dimension_240">240dp</dimen>
+    <dimen name="layout_dimension_300">300dp</dimen>
+
+    <!-- Text Sizes -->
+    <dimen name="text_size_12">12pt</dimen>
+    <dimen name="text_size_18">18sp</dimen>
+    <dimen name="text_size_20">20sp</dimen>
+    <dimen name="text_size_22">22sp</dimen>
+</resources>

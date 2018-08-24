@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@mipmap/bg_sr">
+
+            <include
+                android:id="@+id/appbar"
+                layout="@layout/app_bar_drawer"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/layout_dimen_60" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/layout_dimen_20"
+                android:layout_below="@id/appbar" />
+
+            <TextView
+                android:id="@+id/headingTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:paddingTop="@dimen/layout_dimen_10"
+                android:text="@string/advanced_authentication_credentials"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/line1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/headingTV"
+                android:weightSum="100">
+
+                <Button
+                    android:id="@+id/authid_button"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/layout_dimension_200"
+                    android:layout_weight="50"
+                    android:background="@mipmap/icon_authid"
+                    android:padding="@dimen/layout_dimen_10" />
+
+                <Button
+                    android:id="@+id/mobileOTP_button"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/layout_dimension_200"
+                    android:layout_weight="50"
+                    android:background="@mipmap/icon_authotp"
+                    android:padding="@dimen/layout_dimen_10" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/line2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line1"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <Button
+                    android:id="@+id/ddna_button"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/layout_dimension_200"
+                    android:layout_weight="50"
+                    android:background="@mipmap/icon_ddna"
+                    android:padding="@dimen/layout_dimen_10" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/magCredentials"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line2"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:paddingTop="@dimen/layout_dimen_10"
+                android:text="@string/mag_credentials"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/line3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/magCredentials"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <Button
+                    android:id="@+id/touchId_button"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/layout_dimension_200"
+                    android:layout_weight="50"
+                    android:background="@mipmap/icon_touchid"
+                    android:padding="@dimen/layout_dimen_10" />
+
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_drawer"
+        app:menu="@menu/activity_drawer_drawer" />
+</android.support.v4.widget.DrawerLayout>

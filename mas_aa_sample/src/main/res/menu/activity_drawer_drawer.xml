@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/logouti"
+            android:icon="@mipmap/logout_icon"
+            android:title="@string/logout"
+            />
+        <item
+            android:id="@+id/lockAppi"
+            android:icon="@mipmap/lock_icon"
+            android:title="@string/lock_app"
+            android:enabled="false"
+            android:visibility="gone"/>
+        <item
+            android:id="@+id/fundTransferi"
+            android:icon="@mipmap/fund_transfer_icon"
+            android:title="@string/fund_transfer"
+            android:enabled="false"
+            />
+        <item
+            android:id="@+id/billPaymenti"
+            android:icon="@mipmap/bill_payment"
+            android:title="@string/bill_payment"
+            android:enabled="false"/>
+        <item
+            android:id="@+id/cardsi"
+            android:icon="@mipmap/cards"
+            android:title="@string/cards"
+            android:enabled="false"/>
+        <item
+            android:id="@+id/registerForStrongAuthi"
+            android:icon="@mipmap/register_strong_auth_icon"
+            android:title="@string/register" />
+
+        <!--<item-->
+            <!--android:id="@+id/branchesi"-->
+            <!--android:icon="@mipmap/branches_icon"-->
+            <!--android:title="@string/branches_nearby" />-->
+        <!--<item-->
+            <!--android:id="@+id/atmi"-->
+            <!--android:icon="@mipmap/atm_icon"-->
+            <!--android:title="@string/atm_nearby" />-->
+
+        <item
+            android:id="@+id/settings"
+            android:icon="@mipmap/settings_icon"
+            android:title="@string/settings" />
+    </group>
+
+
+    <item
+        android:checkable="true"
+        android:checked="true"
+        android:title="@string/detail_options"
+        >
+        <menu>
+            <item
+                android:id="@+id/credentials"
+                android:icon="@mipmap/credentials"
+                android:title="@string/credential_list_screen" />
+            <item
+                android:id="@+id/appTheme"
+                android:icon="@mipmap/theme"
+                android:title="@string/app_theme" />
+            <item
+                android:id="@+id/pushnotification"
+                android:icon="@mipmap/notification_bell"
+                android:title="MAG De-Register" />
+            <!--<item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />-->
+            <item
+                android:id="@+id/loginScreeni"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/login_screen" />
+            <item
+                android:id="@+id/home_screen1"
+                android:icon="@mipmap/home_icon"
+                android:title="@string/home_screen" />
+           <!-- <item
+                android:id="@+id/home_screen2"
+                android:icon="@drawable/home_icon"
+                android:title="Home Screen 2" />-->
+        </menu>
+    </item>
+</menu>
