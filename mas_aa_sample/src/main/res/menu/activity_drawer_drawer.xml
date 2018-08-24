@@ -25,11 +25,12 @@
             android:icon="@mipmap/bill_payment"
             android:title="@string/bill_payment"
             android:enabled="false"/>
-        <item
-            android:id="@+id/cardsi"
-            android:icon="@mipmap/cards"
-            android:title="@string/cards"
-            android:enabled="false"/>
+        <!--<item-->
+            <!--android:id="@+id/cardsi"-->
+            <!--android:icon="@mipmap/cards"-->
+            <!--android:title="@string/cards"-->
+            <!--android:enabled="false"-->
+            <!--android:visibility="gone"/>-->
         <item
             android:id="@+id/registerForStrongAuthi"
             android:icon="@mipmap/register_strong_auth_icon"

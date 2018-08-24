@@ -371,7 +371,7 @@
     <string name="str_additional_parameters">List Of Parameters</string>
     <string name="str_additional_headers">List Of Headers</string>
     <string name="str_make_public">Make Public</string>
-    <string name="step_up_mechanism">Step-Up mechanism</string>
+    <string name="step_up_mechanism">Transaction Step-Up</string>
     <string name="app_theme">Themes</string>
     <string name="change_background_color">Change Background Color</string>
     <string name="change_header_color">Header color</string>
