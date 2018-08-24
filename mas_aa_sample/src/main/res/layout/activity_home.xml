@@ -42,7 +42,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="40"
-                    android:paddingStart="@dimen/layout_dimen_10"
+                    android:paddingStart="@dimen/layout_dimen_5"
                     android:text="@string/account_name"
                     android:textColor="@color/shakespeare" />
 
@@ -51,7 +51,7 @@
                     android:layout_width="240dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="40"
-                    android:paddingStart="@dimen/layout_dimen_10"
+                    android:paddingStart="@dimen/layout_dimen_5"
                     android:textColor="@color/shakespeare" />
             </LinearLayout>
 

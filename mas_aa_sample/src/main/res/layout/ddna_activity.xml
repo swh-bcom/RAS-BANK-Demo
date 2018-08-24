@@ -18,7 +18,7 @@
             <EditText
                 android:id="@+id/ddna_details"
                 android:layout_width="400dp"
-                android:layout_height="600dp"
+                android:layout_height="450dp"
                 android:text="@string/dna_data" />
 
             <Button
