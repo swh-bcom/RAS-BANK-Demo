@@ -34,6 +34,7 @@ public class CustomOtpHandler extends MASOtpAuthenticationHandler {
 
     @Override
     public void proceed(final Context context, String otp) {
+
         MASRequest request = new MASRequest.MASRequestBuilder(
                 new Uri.Builder().encodedAuthority("mag.rasdemo.apim.ca.com:8443")
                         .scheme("https")

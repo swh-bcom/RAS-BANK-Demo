@@ -29,7 +29,7 @@ public class ApplicationConstants {
     public static JSONObject CUSTOM_MSSO_CONFIG;
 
     //This will completely hide FIDO from the app
-    public static boolean HIDE_FIDO_FEATURE = false;
+    public static boolean HIDE_FIDO_FEATURE = true;
 
     public static String[] STEP_UP_AUTH_MECHANISMS_LIST  = new String[]{"FIDO", "BIOMETRIC", "OTP"};
     public static String STEP_UP_AUTH_MECHANISM = STEP_UP_AUTH_MECHANISMS_LIST[0];

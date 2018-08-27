@@ -138,7 +138,7 @@ public class RASLoginActivity extends MASFidoLoginActivity {
             @Override
             public void onError(Throwable e) {
                 progress.dismiss();
-                Toast.makeText(RASLoginActivity.this, "Login failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(RASLoginActivity.this, "Authenticated ... processing OTP for user.", Toast.LENGTH_SHORT).show();
                 Bundle data = new Bundle();
                 data.putString("LOGIN_STATUS", "FAILED");
 
@@ -205,40 +205,40 @@ public class RASLoginActivity extends MASFidoLoginActivity {
         MASAuthID.getInstance().loginWithAIDGetSMSession(username+ ApplicationConstants.ORGNAME + ApplicationConstants.NAMESPACE, password,
                 ApplicationConstants.AUTHID_POLICY, ApplicationConstants.AUTHID_DEFAULT_ADDITIONAL_PARAMS, true,
                 new MASCallback<JSONObject>() {
-            @Override
-            public void onSuccess(JSONObject result) {
-                Intent intent = new Intent(activity, HomeActivity.class);
-                startActivity(intent);
-                finish();
-            }
-
-            @Override
-            public void onError(final Throwable throwable) {
-                runOnUiThread(new Runnable() {
                     @Override
-                    public void run() {
+                    public void onSuccess(JSONObject result) {
+                        Intent intent = new Intent(activity, HomeActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
 
-                        String msg = throwable.getMessage();
-                        if (throwable.getCause() instanceof TargetApiException) {
-                            msg = ((TargetApiException) throwable.getCause()).getResponse().getBody().getContent().toString();
-                        } else if (throwable.getCause() instanceof MASAuthIDException) {
-                            try {
-                                msg = (String)((MASAuthIDException) throwable.getCause()).getResponse().get("error_details");
-                            } catch (Exception e) {
-                                e.printStackTrace();
+                    @Override
+                    public void onError(final Throwable throwable) {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                String msg = throwable.getMessage();
+                                if (throwable.getCause() instanceof TargetApiException) {
+                                    msg = ((TargetApiException) throwable.getCause()).getResponse().getBody().getContent().toString();
+                                } else if (throwable.getCause() instanceof MASAuthIDException) {
+                                    try {
+                                        msg = (String)((MASAuthIDException) throwable.getCause()).getResponse().get("error_details");
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                    }
+                                } else if (throwable.getCause() instanceof AIDException) {
+                                    msg =  throwable.getCause().getMessage();
+                                }else {
+                                    msg = "" + throwable.getMessage();
+                                }
+                                initializeErrorView(msg);
+
                             }
-                        } else if (throwable.getCause() instanceof AIDException) {
-                            msg =  throwable.getCause().getMessage();
-                        }else {
-                            msg = "" + throwable.getMessage();
-                        }
-                        initializeErrorView(msg);
+                        });
 
                     }
                 });
-
-            }
-        });
 
     }
 
@@ -262,34 +262,34 @@ public class RASLoginActivity extends MASFidoLoginActivity {
 
         MASAuthOTP.getInstance().loginWithAOTP(username + "::" + ApplicationConstants.ORGNAME+ "::" + ApplicationConstants.NAMESPACE,
                 password, new MASCallback<MASUser>() {
-            @Override
-            public void onSuccess(MASUser result) {
-                Intent intent = new Intent(activity, HomeActivity.class);
-                startActivity(intent);
-                finish();
-            }
-
-            @Override
-            public void onError(Throwable throwable) {
-
-
-                String msg = throwable.getMessage();
-                if (throwable.getCause() instanceof TargetApiException) {
-                    msg = ((TargetApiException) throwable.getCause()).getResponse().getBody().getContent().toString();
-                } else if (throwable.getCause() instanceof MASAuthOTPException) {
-                    try {
-                        msg = (String)((MASAuthOTPException) throwable.getCause()).getResponse().get("error_details");
-                    } catch (Exception e) {
-                        e.printStackTrace();
+                    @Override
+                    public void onSuccess(MASUser result) {
+                        Intent intent = new Intent(activity, HomeActivity.class);
+                        startActivity(intent);
+                        finish();
                     }
-                } else {
-                    msg = "" + throwable.getMessage();
-                }
 
-                initializeErrorView(msg);
+                    @Override
+                    public void onError(Throwable throwable) {
 
-            }
-        });
+
+                        String msg = throwable.getMessage();
+                        if (throwable.getCause() instanceof TargetApiException) {
+                            msg = ((TargetApiException) throwable.getCause()).getResponse().getBody().getContent().toString();
+                        } else if (throwable.getCause() instanceof MASAuthOTPException) {
+                            try {
+                                msg = (String)((MASAuthOTPException) throwable.getCause()).getResponse().get("error_details");
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        } else {
+                            msg = "" + throwable.getMessage();
+                        }
+
+                        initializeErrorView(msg);
+
+                    }
+                });
     }
 
 
