@@ -86,8 +86,8 @@ public class LoginActivity extends BaseActivity {
         btnLogin = (Button)findViewById(R.id.btnlogin);
         registerButton = (TextView) findViewById(R.id.registertv);
         contact = (TextView) findViewById(R.id.contactUstv);
-        branches = (TextView) findViewById(R.id.branchestv);
-        atm = (TextView) findViewById(R.id.atmtv);
+        //branches = (TextView) findViewById(R.id.branchestv);
+        //atm = (TextView) findViewById(R.id.atmtv);
 
         registerButton.setOnClickListener(new OnClickListener() {
             @Override
@@ -106,7 +106,7 @@ public class LoginActivity extends BaseActivity {
                 startActivity(browserIntent);
             }
         });
-
+        /*
         TextView branchestv = (TextView) findViewById(R.id.branchestv);
         branchestv.setOnClickListener(new OnClickListener() {
             @Override
@@ -124,7 +124,7 @@ public class LoginActivity extends BaseActivity {
                 startActivity(browserIntent);
             }
         });
-
+        */
         if (isSessionLocked()) {
             unlockSessionLL.setVisibility(View.VISIBLE);
             btnLogin.setVisibility(View.GONE);
@@ -282,7 +282,8 @@ public class LoginActivity extends BaseActivity {
                     LoginActivity.this.startActivity(intent);
                     LoginActivity.this.finish();
                 } else {
-                    Toast.makeText(LoginActivity.this, "Login failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    AppUtil.showAlertDialog(context,e.getMessage(),"Login failed: " + e.getMessage(), false);
+                    //Toast.makeText(LoginActivity.this, "Login failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                     Bundle data = new Bundle();
                     data.putString("LOGIN_STATUS", "FAILED");
                 }

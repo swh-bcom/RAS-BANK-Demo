@@ -20,10 +20,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/get_dna_details" />
+
             <EditText
                 android:id="@+id/ddna_details"
                 android:layout_width="match_parent"
                 android:layout_height="fill_parent"
+                android:editable="false"
                 android:fadeScrollbars="true"
                 android:isScrollContainer="true"
                 android:nestedScrollingEnabled="true"
