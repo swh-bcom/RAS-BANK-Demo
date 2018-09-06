@@ -40,8 +40,6 @@ import com.example.ras.util.ApplicationConstants;
 
 import org.json.JSONObject;
 
-import java.util.Map;
-
 /**
  * Created by nikru01 on 11/3/2017.
  */
@@ -122,43 +120,68 @@ public class RASLoginActivity extends MASFidoLoginActivity {
         progress.setCancelable(false);
         progress.show();
 
+        if(ApplicationConstants.DEVICE_REG_STEP_UP_ENABLED) {
 
-        MASUser.login(username, password, new MASCallback<MASUser>() {
-            @Override
-            public Handler getHandler() {
-                return new Handler(Looper.getMainLooper());
-            }
-
-            @Override
-            public void onSuccess(MASUser result) {
-                progress.dismiss();
-                finish();
-            }
-
-            @Override
-            public void onError(Throwable e) {
-                progress.dismiss();
-                Toast.makeText(RASLoginActivity.this, "Authenticated ... processing OTP for user.", Toast.LENGTH_SHORT).show();
-                Bundle data = new Bundle();
-                data.putString("LOGIN_STATUS", "FAILED");
-
-                MAS.cancelAllRequests();
-
-                if (((MASException)e).getRootCause() instanceof DeviceRegistrationAwaitingActivationException) {
-
-                    Intent intent = new Intent(MAS.getContext(), MASOtpActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    intent.putExtra(MssoIntents.EXTRA_OTP_HANDLER, new CustomOtpHandler((OtpAuthenticationHandler) null));
-                    RASLoginActivity.this.startActivity(intent);
-                    RASLoginActivity.this.finish();
-                } else {
-                    Toast.makeText(RASLoginActivity.this, "Login failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                    //Bundle data = new Bundle();
-                    data.putString("LOGIN_STATUS", "FAILED");
+            MASUser.login(username, password, new MASCallback<MASUser>() {
+                @Override
+                public Handler getHandler() {
+                    return new Handler(Looper.getMainLooper());
                 }
-            }
-        });
 
+                @Override
+                public void onSuccess(MASUser result) {
+                    progress.dismiss();
+                    finish();
+                }
+
+
+                // Device Registered -- ENTER HERE
+
+                @Override
+                public void onError(Throwable e) {
+                    progress.dismiss();
+                    Toast.makeText(RASLoginActivity.this, "Authenticated ..." + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Bundle data = new Bundle();
+                    data.putString("LOGIN_STATUS", "FAILED");
+
+                    MAS.cancelAllRequests();
+                    if (((MASException) e).getRootCause() instanceof DeviceRegistrationAwaitingActivationException) {
+                        Intent intent = new Intent(MAS.getContext(), MASOtpActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        intent.putExtra(MssoIntents.EXTRA_OTP_HANDLER, new CustomOtpHandler((OtpAuthenticationHandler) null));
+                        RASLoginActivity.this.startActivity(intent);
+                        RASLoginActivity.this.finish();
+                    } else {
+                        Toast.makeText(RASLoginActivity.this, "Login failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        //Bundle data = new Bundle();
+                        data.putString("LOGIN_STATUS", "FAILED");
+                    }
+                }
+            });
+        } else {
+            MASUser.login(username, password, new MASCallback<MASUser>() {
+                @Override
+                public Handler getHandler() {
+                    return new Handler(Looper.getMainLooper());
+                }
+
+                @Override
+                public void onSuccess(MASUser result) {
+                    progress.dismiss();
+                    finish();
+                }
+
+                @Override
+                public void onError(Throwable e) {
+                    progress.dismiss();
+                    Toast.makeText(RASLoginActivity.this, "Login Failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Bundle data = new Bundle();
+                    data.putString("LOGIN_STATUS", "FAILED");
+
+                    MAS.cancelAllRequests();
+                }
+            });
+        }
     }
 
     private boolean isValid(String username, int passwordLength) {

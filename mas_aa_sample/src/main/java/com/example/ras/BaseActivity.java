@@ -6,7 +6,6 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.content.ContextCompat;
@@ -24,13 +23,15 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ListView;
 import android.widget.TextView;
-
+import android.app.AlertDialog;
+import android.widget.Toast;
 import com.ca.mas.foundation.MASCallback;
 import com.ca.mas.foundation.MASDevice;
 import com.ca.mas.foundation.MASUser;
 import com.example.ras.util.AppThemeConstants;
 import com.example.ras.util.AppThemeUtil;
 import com.example.ras.util.ApplicationConstants;
+
 
 import java.io.ByteArrayOutputStream;
 
@@ -173,7 +174,6 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
 
         AppThemeUtil.updateAppConstants(this);
 
-
     }
 
     public void showToastMessage(final String msg) {
@@ -181,7 +181,10 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                initialiseTextView(msg,R.color.deny_highlight);
+                AlertDialog alertDialog = new AlertDialog.Builder(BaseActivity.this).create();
+                alertDialog.setMessage(msg);
+                alertDialog.show();
+              //  initialiseTextView(msg,R.color.deny_highlight);
             }
         });
     }
@@ -287,19 +290,20 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.appTheme) {
             Intent intent = new Intent(this, AppThemeConfigActivity.class);
             startActivity(intent);
-        } else if (id == R.id.pushnotification) {
-            //showToastMessage("This feature is disabled");
-            MASDevice.getCurrentDevice().deregister(new MASCallback<Void>() {
-                @Override
-                public void onSuccess(Void result) {
-                    showToastMessage("De-registered");
-                }
-                @Override
-                public void onError(Throwable e) {
-                    showToastMessage("De-registeration failed");
-                }
-            });
-        } else if (id == R.id.settings) {
+        } else //showToastMessage("This feature is disabled");
+            if (id == R.id.pushnotification)
+                MASDevice.getCurrentDevice().deregister(new MASCallback<Void>() {
+                    @Override
+                    public void onSuccess(Void result) {
+                       showToastMessage("De-registered Success !!!");
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        showToastMessage("De-registeration Failed !!!");
+                    }
+                });
+            else if (id == R.id.settings) {
             Intent intent = new Intent(this, SettingsActivity.class);
             startActivity(intent);
         } else if (id == R.id.registerForStrongAuthi) {

@@ -104,8 +104,8 @@ public class SettingsActivity extends AppCompatActivity {
         updateSettingsBtn = (Button) findViewById(R.id.updateSettingsBtn);
         strongAuthOrgNameet = (EditText) findViewById(R.id.strongAuthOrgNameet);
         strongAuthNamespaceet = (EditText) findViewById(R.id.strongAuthNamespaceet);
-        strongAuthAuthIDProfileet = (EditText) findViewById(R.id.strongAuthAuthIDProfileet);
-        strongAuthAuthIDPolicyet = (EditText) findViewById(R.id.strongAuthAuthIDPolicyet);
+//        strongAuthAuthIDProfileet = (EditText) findViewById(R.id.strongAuthAuthIDProfileet);
+//        strongAuthAuthIDPolicyet = (EditText) findViewById(R.id.strongAuthAuthIDPolicyet);
         strongAuthAuthIDDefaultAdditionalParamset = (EditText) findViewById(R.id.strongAuthAuthIDDefaultAdditionalParamset);
         versionName = (TextView) findViewById(R.id.version_name);
 
@@ -179,8 +179,8 @@ public class SettingsActivity extends AppCompatActivity {
 
         strongAuthOrgNameet.setText(ApplicationConstants.ORGNAME);
         strongAuthNamespaceet.setText(ApplicationConstants.NAMESPACE);
-        strongAuthAuthIDProfileet.setText(ApplicationConstants.AUTHID_PROFILE);
-        strongAuthAuthIDPolicyet.setText(ApplicationConstants.AUTHID_POLICY);
+        // strongAuthAuthIDProfileet.setText(ApplicationConstants.AUTHID_PROFILE);
+        // strongAuthAuthIDPolicyet.setText(ApplicationConstants.AUTHID_POLICY);
         strongAuthAuthIDDefaultAdditionalParamset.setText(AppUtil.convertAdditionalParamsToString(ApplicationConstants.AUTHID_DEFAULT_ADDITIONAL_PARAMS));
         versionName.setText("Ver:" + BuildConfig.VERSION_NAME);
 
@@ -241,8 +241,8 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 ApplicationConstants.ORGNAME = strongAuthOrgNameet.getText().toString();
                 ApplicationConstants.NAMESPACE = strongAuthNamespaceet.getText().toString();
-                ApplicationConstants.AUTHID_PROFILE = strongAuthAuthIDProfileet.getText().toString();
-                ApplicationConstants.AUTHID_POLICY = strongAuthAuthIDPolicyet.getText().toString();
+               // ApplicationConstants.AUTHID_PROFILE = strongAuthAuthIDProfileet.getText().toString();
+               // ApplicationConstants.AUTHID_POLICY = strongAuthAuthIDPolicyet.getText().toString();
                 String additionalParams = strongAuthAuthIDDefaultAdditionalParamset.getText().toString();
                 ApplicationConstants.AUTHID_DEFAULT_ADDITIONAL_PARAMS = AppUtil.parseAdditionalParams(additionalParams);
 
@@ -253,7 +253,7 @@ public class SettingsActivity extends AppCompatActivity {
 
                 ApplicationConstants.STEP_UP_AUTH_MECHANISM = stepupSpinner.getSelectedItem().toString();
                 ApplicationConstants.LOCATION_STEP_UP_AUTH_MECHANISM = locationStepupSpinner.getSelectedItem().toString();
-                ApplicationConstants.DEVICE_REG_STEP_UP_ENABLED = deviceRegStepUpswitch.isEnabled();
+                ApplicationConstants.DEVICE_REG_STEP_UP_ENABLED = deviceRegStepUpswitch.isChecked();
 
                 ApplicationConstants.LOCATION = locationSpinner.getSelectedItem().toString();
 
