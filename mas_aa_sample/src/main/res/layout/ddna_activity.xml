@@ -6,26 +6,32 @@
     android:layout_height="match_parent">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:gravity="top"
             android:orientation="vertical">
-
-            <EditText
-                android:id="@+id/ddna_details"
-                android:layout_width="400dp"
-                android:layout_height="450dp"
-                android:text="@string/dna_data" />
-
             <Button
                 android:id="@+id/get_dna_details"
-                android:layout_width="@dimen/layout_dimension_250"
-                android:layout_height="@dimen/layout_dimen_50"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="@string/get_dna_details" />
+            <EditText
+                android:id="@+id/ddna_details"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:fadeScrollbars="true"
+                android:isScrollContainer="true"
+                android:nestedScrollingEnabled="true"
+                android:scrollbarAlwaysDrawVerticalTrack="true"
+                android:scrollbars="vertical"
+                android:text="@string/dna_data"
+                android:verticalScrollbarPosition="defaultPosition" />
+
         </LinearLayout>
     </RelativeLayout>
 

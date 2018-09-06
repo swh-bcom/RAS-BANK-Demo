@@ -191,7 +191,7 @@ public class StepUpOnLocationRiskActivity extends AppCompatActivity {
                 @Override
                 public void onSuccess(Void result) {
 
-                    gotoLoginScreen("Login Failed. Risk too high.");
+                    gotoLoginScreen("Access Denied due to Geo Location.");
                 }
 
                 @Override
