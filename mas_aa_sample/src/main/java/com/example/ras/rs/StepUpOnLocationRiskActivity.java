@@ -1,5 +1,6 @@
 package com.example.ras.rs;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.KeyguardManager;
 import android.content.Context;
@@ -20,6 +21,7 @@ import com.example.ras.BaseActivity;
 import com.example.ras.HomeActivity;
 import com.example.ras.LoginActivity;
 import com.example.ras.R;
+import com.example.ras.util.AppUtil;
 import com.example.ras.util.ApplicationConstants;
 
 import org.json.JSONObject;
@@ -31,15 +33,11 @@ public class StepUpOnLocationRiskActivity extends AppCompatActivity {
 
     public static final String ACTIVITYMESSAGE = "ACTIVITYMESSAGE";
     private static final String TAG = "StpUpOnLocRisk";
-
+    Activity context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_step_up_on_location_risk);
-
-
-
-
     }
 
     public void putDataInIntentBundle(Intent intent, String message) {
@@ -136,10 +134,6 @@ public class StepUpOnLocationRiskActivity extends AppCompatActivity {
     }
 
     private void gotoLoginScreen(String s) {
-        /*try {
-            doUserLogout();
-        } catch ( Exception e) {
-        }*/
         Intent intent = new Intent(StepUpOnLocationRiskActivity.this, LoginActivity.class);
         putDataInIntentBundle(intent, s);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -174,6 +168,7 @@ public class StepUpOnLocationRiskActivity extends AppCompatActivity {
 
     @Override
     protected void onResume() {
+
         super.onResume();
 
         if (isOnResume) {
@@ -190,7 +185,6 @@ public class StepUpOnLocationRiskActivity extends AppCompatActivity {
             MASUser.getCurrentUser().logout(new MASCallback<Void>() {
                 @Override
                 public void onSuccess(Void result) {
-
                     gotoLoginScreen("Access Denied due to Geo Location.");
                 }
 

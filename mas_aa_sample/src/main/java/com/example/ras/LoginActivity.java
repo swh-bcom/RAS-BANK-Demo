@@ -215,9 +215,6 @@ public class LoginActivity extends BaseActivity {
         return R.layout.activity_session_unlock_login;
     }
 
-
-
-
     @Override
     protected void onResume() {
         super.onResume();

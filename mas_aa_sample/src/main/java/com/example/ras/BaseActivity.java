@@ -30,6 +30,7 @@ import com.ca.mas.foundation.MASDevice;
 import com.ca.mas.foundation.MASUser;
 import com.example.ras.util.AppThemeConstants;
 import com.example.ras.util.AppThemeUtil;
+import com.example.ras.util.AppUtil;
 import com.example.ras.util.ApplicationConstants;
 
 
@@ -194,7 +195,8 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                initialiseTextView(msg,R.color.approve_end);
+                AppUtil.showAlertDialog(context, msg, "Alert", false);
+                //  initialiseTextView(msg,R.color.approve_end);
             }
         });
     }
