@@ -60,11 +60,11 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".LoginActivity"
-            android:label="CA Bank"
+            android:label="BROADCOM Bank"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".NotificationDialog"
-            android:label="CA Bank"
+            android:label="BROADCOM Bank"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <meta-data
