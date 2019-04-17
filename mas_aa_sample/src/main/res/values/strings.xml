@@ -3,8 +3,9 @@
     <!--
     <string name="app_name">Rapid App Security</string>
 -->
-    <string name="app_name">BROADCOM Bank</string>
-    <string name="sharedUserLabel">Example Org</string>
+    <string name="app_name">Broadcom - Bank</string>
+    <string name="sharedUserLabel">Exam
+        ple Org</string>
 
     <!--AuthID PKI-->
     <string name="provision_account">Provision Account</string>
@@ -314,7 +315,7 @@
     <string name="login_with_authid">Login With Auth ID</string>
     <string name="auth_id">AUTH ID</string>
     <string name="aotp">AOTP</string>
-    <string name="forwardInc">BROADCOM Bank</string>
+    <string name="forwardInc">Broadcom - Bank</string>
     <string name="authid_registration">AUTH ID REGISTRATION</string>
     <string name="invalid_details">Enter valid details</string>
     <string name="fidologindisabled">Fido login disabled</string>

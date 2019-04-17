@@ -1,43 +1,29 @@
 {
 	"server": {
-		"hostname": "mag.apimlab.com",
+		"hostname": "ras-mag.day.apim.ca.com",
 		"port": 8443,
 		"prefix": "",
 		"server_certs": [
 			[
-				"-----BEGIN CERTIFICATE-----",
-				"MIIC+DCCAeCgAwIBAgIIF0h8CcObkwEwDQYJKoZIhvcNAQEMBQAwGjEYMBYGA1UEAxMPbWFnLmFw",
-				"aW1sYWIuY29tMB4XDTE4MDkxMjE0MDQ0OFoXDTI4MDkwOTE0MDQ0OFowGjEYMBYGA1UEAxMPbWFn",
-				"LmFwaW1sYWIuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsBZVrgtESpxuKTG8",
-				"xmzq+XAlbWRm2zvfInF8nt7VOk8qRFEk45pxn7KkAUN3QKoG7B72ZDaYO/QhFmSzjxfiERviQpPG",
-				"wguXbT6CDy/CbyVrahW2ycQRuGvsGr1fBmt91ipfeRY+ickHdrFN1lFkesbEdBG6mRJb9em/zd/u",
-				"sSWKcKrhGMDJkymqeaFvVv3YVLlK+Hbpmyhkg+skNcHqMA0y1CfCt+lI+97Eg7h3vWdLzYtfkL3K",
-				"qD5e8U0SFwNzhsDsm+SZqdM47H0/t6azxaPYR8hywv0iOa1KAswWmu3v2Jh2ceofATw8UpXOihsF",
-				"HTZpbYsvW+EehalOcGYxcwIDAQABo0IwQDAdBgNVHQ4EFgQUFwqSIjJ0wJE15iKtBooD4D/q8UUw",
-				"HwYDVR0jBBgwFoAUFwqSIjJ0wJE15iKtBooD4D/q8UUwDQYJKoZIhvcNAQEMBQADggEBAJiIezcZ",
-				"JENeyLLGWoOlCQQkKo/Gip+e4jZMXQRYvOAb/Rq/rfbsxMicUs/WCIsy5SkWuAn+psYACk2EYvWg",
-				"94imgLK8hedKXpEVCz23WG6udP8riHF9On2t2Xv+ZjFrzAgSBlr0KEVbxhevNl0yuyYJ5BDk8KjR",
-				"0HxYOnX8SIsD0ZZAVNHzs2D1DfpigJ5aEe+qt7ZSspu3SPEZsS7ZneLEvp2F35dTxGBLZhr24DH7",
-				"DE5wnPU2GjchVzuCFluxppywPbkmyuczfASZ3X1hoHQFRnLx2bONQnDGq367UYNRkVX25ftEPY78",
-				"QGdWuyZDQnFZhlxR8u6NLHZ/VsUOi2Q=",
-				"-----END CERTIFICATE-----"
+				"-----BEGIN CERTIFICATE-----","MIIFZjCCBE6gAwIBAgISA/GKeSLiN6D2lL7vrr0NA8pQMA0GCSqGSIb3DQEBCwUAMEoxCzAJBgNV","BAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MSMwIQYDVQQDExpMZXQncyBFbmNyeXB0IEF1","dGhvcml0eSBYMzAeFw0xOTA0MDQxNDM3NDJaFw0xOTA3MDMxNDM3NDJaMCIxIDAeBgNVBAMTF3Jh","cy1tYWcuZGF5LmFwaW0uY2EuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAt9zP","csSnn5iLSY6FpM3lTSMxvN33VJApkCZLRnotsv9dul3DdqrCCTPz5gJ9wI65/uu6tElRyIKAN2OF","tsfKqC6XN+7wtLMbXUpOqxSz63qZshRlRtdK9O9/qbwLnH1pJB1EcCDPkyjzprQL62K0U7xP7Oqm","Vza/hrhC54Z0cWPln8ReAqjqnb9vK+TP2zxJOkV0GjrHPvY+SbjNQ+lvdhMyiLhGLlwnIlnO0ioQ","rCVKyNEQOh76/aowGFY3QlQ/qHtJkcbXx2Q2eytrCfiJN86Sp9EdwVyKs5WQaqbjrsaNWMXuxpsC","MiHJ9Iri92Flte8kD4KxVuNOo0nHTUaMBQIDAQABo4ICbDCCAmgwDgYDVR0PAQH/BAQDAgWgMB0G","A1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8EAjAAMB0GA1UdDgQWBBRvxlGG","i2rm8jf73DqfwvX5HZZYMTAfBgNVHSMEGDAWgBSoSmpjBH3duubRObemRWXv86jsoTBvBggrBgEF","BQcBAQRjMGEwLgYIKwYBBQUHMAGGImh0dHA6Ly9vY3NwLmludC14My5sZXRzZW5jcnlwdC5vcmcw","LwYIKwYBBQUHMAKGI2h0dHA6Ly9jZXJ0LmludC14My5sZXRzZW5jcnlwdC5vcmcvMCIGA1UdEQQb","MBmCF3Jhcy1tYWcuZGF5LmFwaW0uY2EuY29tMEwGA1UdIARFMEMwCAYGZ4EMAQIBMDcGCysGAQQB","gt8TAQEBMCgwJgYIKwYBBQUHAgEWGmh0dHA6Ly9jcHMubGV0c2VuY3J5cHQub3JnMIIBBAYKKwYB","BAHWeQIEAgSB9QSB8gDwAHYA4mlLribo6UAJ6IYbtjuD1D7n/nSI+6SPKJMBnd3x2/4AAAFp6P+q","9gAABAMARzBFAiEA9xwF0KdNqoffp6u6GL2oDf9ilj+t5HNOylpYuiw1ueICIFVJ/xZLSEMqy2AP","MbtaqXHaOwqd4j01T1Pp36VwOyQFAHYAKTxRllTIOWW6qlD8WAfUt2+/WHopctykwwz05UVH9HgA","AAFp6P+q/QAABAMARzBFAiA+Jrgfxbqb8ZQ1v/aFtv0SEOlLiqFTv4GzhJK3bsB8HwIhAKTjQpex","V539VdnfkkRdO9EHNjDn+AUg5ii/uLGng+xoMA0GCSqGSIb3DQEBCwUAA4IBAQAamSpDTPPSr9jR","c7FHOEHrUXGV30tUftGNuAGztPpcQzI5z/ZuVKXIr/LaxsxUbj5NXAdbAVpgIYH/XZWXq0c2g1mG","oSkteK6znmxbb8Buu4nUigmKnvYaNlf+bh2onhyaprk9kJIwlht3YaG3OaIa4gR/zx+sHT6O6GN9","pNZYC6ISuf6G5JGSibYtws9sgGNjC0ol1pGNlVOxXQieoFMcSf3KfyS3o1O/LMK5KLqtc3Yab57H","9jWYoYR4XPwwS3f3RxqEfMlJGYvukDWOfZP8+xJhSUjG/kaednFCJzBft0PJPiNRnOp4VxcZI6G9","YqJ/kvuL2N3pG0JARt6MUOf+","-----END CERTIFICATE-----"
 			]
 		]
 	},
 	"oauth": {
 		"client": {
 			"organization": "CA Technologies",
-			"description": "Example application for Mobile SSO demonstrations",
-			"client_name": "AppA",
+			"description": "RAS Demo Mobile App",
+			"client_name": "RAS Demo App",
 			"client_type": "confidential",
 			"registered_by": "admin",
 			"client_custom": {},
 			"client_ids": [
+
 				{
-					"client_id": "bdc2a7e6-2e28-4134-852e-5e5252ad6ad9",
-					"client_secret": "",
-					"scope": "openid msso phone profile address email msso_register user_role mas_messaging mas_storage mas_identity_retrieve_users",
-					"redirect_uri": "camsso://ca.com",
+					"client_id": "6a58a48f-0d6b-40f9-9c32-afcf6f2103c6",
+					"client_secret":"",
+					"scope": "openid address phone email profile user_role msso msso_register msso_client_register openid_client_registration",
+					"redirect_uri": "https://android.ssosdk.ca.com/android",
 					"environment": "ALL",
 					"status": "ENABLED",
 					"registered_by": "admin",
@@ -57,42 +43,15 @@
 		"oauth_protected_endpoints": {
 			"userinfo_endpoint_path": "/openid/connect/v1/userinfo"
 		}
-	},
-	"mas": {
-		"scim-path": "/SCIM/LDAP/v2",
-		"mas-storage-path": "/MASS/v1/Client"
-	},
-	"mag": {
-		"system_endpoints": {
-			"device_register_endpoint_path": "/connect/device/register",
-			"device_renew_endpoint_path": "/connect/device/renew",
-			"device_client_register_endpoint_path": "/connect/device/register/client",
-			"device_remove_endpoint_path": "/connect/device/remove",
-			"client_credential_init_endpoint_path": "/connect/client/initialize",
-			"authenticate_otp_endpoint_path": "/auth/generateOTP"
-		},
-		"oauth_protected_endpoints": {
-			"enterprise_browser_endpoint_path": "/connect/enterprise/browser",
-			"device_list_endpoint_path": "/connect/device/list"
-		},
-		"mobile_sdk": {
-			"sso_enabled": true,
-			"location_enabled": true,
-			"location_provider": "network",
-			"msisdn_enabled": true,
-			"enable_public_key_pinning": false,
-			"trusted_public_pki": false,
-			"trusted_cert_pinned_public_key_hashes": [],
-			"client_cert_rsa_keybits": 1024
-		},
-		"ble": {
-			"msso_ble_service_uuid": "980c2f36-bde3-11e4-8dfc-aa07a5b093db",
-			"msso_ble_characteristic_uuid": "980c34cc-bde3-11e4-8dfc-aa07a5b093db",
-			"msso_ble_rssi": -80
-		}
-	},
+	},"mas": { "scim-path":"/SCIM/MAS/v2" },"mag": { "system_endpoints": { "device_register_endpoint_path": "/connect/device/register", "device_renew_endpoint_path": "/connect/device/renew", "device_client_register_endpoint_path": "/connect/device/register/client", "device_remove_endpoint_path": "/connect/device/remove", "client_credential_init_endpoint_path": "/connect/client/initialize", "authenticate_otp_endpoint_path": "/auth/generateOTP" }, "oauth_protected_endpoints": { "enterprise_browser_endpoint_path": "/connect/enterprise/browser", "device_list_endpoint_path": "/connect/device/list" }, "mobile_sdk": { "sso_enabled": true, "location_enabled": true, "location_provider": "network", "msisdn_enabled": true, "enable_public_key_pinning": true, "trusted_public_pki":true, "trusted_cert_pinned_public_key_hashes" :[], "client_cert_rsa_keybits": 1024 }, "ble":{ "msso_ble_service_uuid":"980c2f36-bde3-11e4-8dfc-aa07a5b093db", "msso_ble_characteristic_uuid":"980c34cc-bde3-11e4-8dfc-aa07a5b093db", "msso_ble_rssi": -80 } },
 	"custom": {
-		"oauth_demo_protected_api_endpoint_path": "/oauth/v2/protectedapi/foo",
-		"mag_demo_products_endpoint_path": "/protected/resource/products"
+		"oauth_demo_protected_api_endpoint_path":"/oauth/v2/protectedapi/foo",
+		"mag_demo_products_endpoint_path":"/protected/resource/products",
+		"masaa_auth_endpoints": {
+			"getchallenge_endpoint_path": "/auth/strongauth/authid/challenge",
+			"verifychallenge_endpoint_path": "/auth/strongauth/authid/verifySignedChallenge",
+			"verifyotp_endpoint_path": "/auth/strongauth/aotp/verifyAOTP/"
+		},
+		"fido": [{"provider":"sds", "request_path": "/fido/uaf/request","response_path": "/fido/uaf/response","trustedfacets_path": "/fido/trustedfacets"}]
 	}
 }
